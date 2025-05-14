@@ -1,0 +1,54 @@
+.case-studies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.case-study-card {
+  padding: 1.5rem;
+  border-radius: 8px;
+  background-color: var(--qwik-light-blue);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.case-study-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.case-study-card h3 {
+  margin-top: 0;
+  color: var(--qwik-dark-blue);
+}
+
+.case-study-card a {
+  display: inline-block;
+  margin-top: 1rem;
+  color: var(--qwik-dark-blue);
+  font-weight: 500;
+  text-decoration: none;
+  border-bottom: 2px solid var(--qwik-dark-blue);
+  transition: border-color 0.3s ease;
+}
+
+.case-study-card a:hover {
+  border-color: var(--qwik-light-purple);
+}
+
+.back-link {
+  margin-top: 2rem;
+}
+
+.back-link a {
+  display: inline-flex;
+  align-items: center;
+  color: var(--qwik-dark-blue);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.back-link a:hover {
+  text-decoration: underline;
+}

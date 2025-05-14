@@ -1,0 +1,150 @@
+/* Case study content styling */
+.case-study-content {
+  font-family: var(--font-family, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
+  color: var(--text-color);
+  line-height: 1.7;
+  font-size: 1.05rem;
+  letter-spacing: 0.01em;
+}
+
+.case-study-content h1,
+.case-study-content h2 {
+  font-size: 1.85rem;
+  margin-bottom: 1.5rem;
+  color: var(--primary-color);
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.case-study-content h2 {
+  margin-top: 2.5rem;
+  font-size: 1.75rem;
+}
+
+.case-study-content h3 {
+  margin-top: 3.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.6rem;
+  color: var(--primary-color);
+  font-weight: 700;
+  line-height: 1.3;
+  clear: both;
+  position: relative;
+  padding-bottom: 0.75rem;
+}
+
+.case-study-content h3::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background-color: var(--primary-color);
+  border-radius: 2px;
+}
+
+.case-study-content p {
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+  font-size: 1.05rem;
+  color: var(--text-color);
+}
+
+.case-study-content ul,
+.case-study-content ol {
+  margin-bottom: 1.5rem;
+  padding-left: 1.75rem;
+}
+
+.case-study-content ul {
+  list-style-type: none;
+  padding-left: 1.25rem;
+}
+
+.case-study-content li {
+  margin-bottom: 1rem;
+  line-height: 1.7;
+  position: relative;
+  font-size: 1.05rem;
+}
+
+.case-study-content li::before {
+  content: "";
+  position: absolute;
+  left: -1rem;
+  top: 0.75rem;
+  width: 6px;
+  height: 6px;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  transform: translateY(-50%);
+  box-shadow: 0 0 0 1px rgba(var(--primary-color-rgb, 0, 90, 158), 0.2);
+}
+
+.case-study-content a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.2s ease;
+  border-bottom: 1px solid var(--primary-color-light);
+}
+
+.case-study-content a:hover {
+  color: var(--primary-color-dark, #005a9e);
+  border-bottom-color: var(--primary-color);
+}
+
+.case-study-content blockquote {
+  border-left: 4px solid var(--primary-color-light);
+  padding: 1rem 1.5rem;
+  margin: 2rem 0;
+  background-color: var(--card-bg-color-light, #f8f9fa);
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+  color: var(--text-color-light);
+}
+
+.case-study-content code {
+  background-color: var(--code-bg-color, #f5f5f5);
+  padding: 0.2rem 0.4rem;
+  border-radius: 3px;
+  font-family: monospace;
+  font-size: 0.9em;
+}
+
+.case-study-content pre {
+  background-color: var(--code-bg-color, #f5f5f5);
+  padding: 1.25rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin-bottom: 2rem;
+}
+
+.case-study-content pre code {
+  background-color: transparent;
+  padding: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .case-study-content {
+    font-size: 1rem;
+  }
+  
+  .case-study-content h1,
+  .case-study-content h2 {
+    font-size: 1.6rem;
+  }
+  
+  .case-study-content h3 {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .case-study-content h3 {
+    font-size: 1.2rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+  }
+}
