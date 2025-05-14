@@ -163,6 +163,18 @@ img {
   height: auto;
 }
 
+/* Image Wrapper for Responsive Images */
+.image-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 button, .button {
   display: inline-block;
   background-color: var(--primary-color);

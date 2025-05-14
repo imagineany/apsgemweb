@@ -2,6 +2,8 @@ import { component$, useStylesScoped$, useContext } from '@builder.io/qwik';
 import { useTranslation } from '../../i18n/i18n';
 import { LanguageContext } from '../../i18n/i18n';
 import sectionsStyles from './sections.css?inline';
+// Import optimized image
+import SoftwarePrecisionImage from '~/media/software-precision.png?w=1200&h=1200&format=webp&jsx';
 
 export const HeroSection = component$(() => {
   useStylesScoped$(sectionsStyles);
@@ -22,7 +24,7 @@ export const HeroSection = component$(() => {
           </div>
         </div>
         <div class="hero-image">
-          <img src="/images/software-precision.png" alt="Enterprise Software Solutions" />
+          <SoftwarePrecisionImage />
         </div>
         <div class="hero-background"></div>
       </div>

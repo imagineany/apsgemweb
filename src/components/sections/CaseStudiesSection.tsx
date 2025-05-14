@@ -5,19 +5,18 @@ import sectionsStyles from './sections.css?inline';
 import { MatArrowForwardOutlined } from '@qwikest/icons/material';
 import { CaseStudyDialog } from '../dialogs/CaseStudyDialog';
 
+// Import optimized images
+import DigitalManufacturingImage from '~/media/digital-manufacturing-transformation.png?w=400&h=200&format=webp&jsx';
+import FinancialServicesImage from '~/media/financial-services-cloud-migration.png?w=400&h=200&format=webp&jsx';
+import RetailChainImage from '~/media/retail-chain-erp-solution.png?w=400&h=200&format=webp&jsx';
+import EquipmentVendorImage from '~/media/5g-equipment-vendor-swap.png?w=400&h=200&format=webp&jsx';
+import FibreRolloutImage from '~/media/ai-gis-fibre-rollout.png?w=400&h=200&format=webp&jsx';
+import McpAgenticImage from '~/media/mcp-agentic-ai-marketplace.png?w=400&h=200&format=webp&jsx';
+
 // Import case study data
 import { caseStudyInfo as enCaseStudyInfo } from '../../i18n/case-studies/en';
 import { caseStudyInfo as deCaseStudyInfo } from '../../i18n/case-studies/de';
 
-// Case study images
-const caseStudyImages = [
-  "/images/digital-manufacturing-transformation.png",
-  "/images/financial-services-cloud-migration.png",
-  "/images/retail-chain-erp-solution.png",
-  "/images/5g-equipment-vendor-swap.png",
-  "/images/ai-gis-fibre-rollout.png",
-  "/images/mcp-agentic-ai-marketplace.png"
-];
 
 export const CaseStudiesSection = component$(() => {
   useStylesScoped$(sectionsStyles);
@@ -58,7 +57,12 @@ export const CaseStudiesSection = component$(() => {
           {caseStudies.map((study, index) => (
             <div key={index} class="card case-study-card">
               <div class="case-study-image">
-                <img src={caseStudyImages[index]} alt={study.title} />
+                {index === 0 && <DigitalManufacturingImage />}
+                {index === 1 && <FinancialServicesImage />}
+                {index === 2 && <RetailChainImage />}
+                {index === 3 && <EquipmentVendorImage />}
+                {index === 4 && <FibreRolloutImage />}
+                {index === 5 && <McpAgenticImage />}
               </div>
               <div class="case-study-industry">
                 <span>{study.industry}</span>

@@ -1,6 +1,8 @@
 import { component$, useStylesScoped$, useContext } from '@builder.io/qwik';
 import { useTranslation, LanguageContext } from '../../i18n/i18n';
 import sectionsStyles from './sections.css?inline';
+// Import optimized image
+import TeamImage from '~/media/collaborative-software-development-team.png?w=1200&h=800&format=webp&jsx';
 
 export const TeamSection = component$(() => {
   useStylesScoped$(sectionsStyles);
@@ -19,7 +21,7 @@ export const TeamSection = component$(() => {
         </div>
         
         <div class="team-image-container">
-          <img src="/images/collaborative-software-development-team.png" alt="Our Team" />
+          <TeamImage />
         </div>
       </div>
     </section>

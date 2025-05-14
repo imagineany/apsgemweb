@@ -4,6 +4,12 @@ import { enTranslations } from '../../i18n/en';
 import { deTranslations } from '../../i18n/de';
 import sectionsStyles from './sections.css?inline';
 
+// Import optimized images
+import EngineeringPrecisionImage from '~/media/engineering-precision.png?w=80&h=80&format=webp&jsx';
+import EnterpriseFocusedExpertiseImage from '~/media/enterprise-focused-expertise.png?w=80&h=80&format=webp&jsx';
+import LongTermPartnershipImage from '~/media/long-term-partnership.png?w=80&h=80&format=webp&jsx';
+import ProvenTrackRecordImage from '~/media/proven-track-record.png?w=80&h=80&format=webp&jsx';
+
 export const WhyUsSection = component$(() => {
   useStylesScoped$(sectionsStyles);
   
@@ -15,13 +21,6 @@ export const WhyUsSection = component$(() => {
     ? enTranslations.whyUs.items 
     : deTranslations.whyUs.items;
   
-  // Map why us items to images
-  const whyUsImages = [
-    "/images/engineering-precision.png",
-    "/images/enterprise-focused-expertise.png",
-    "/images/long-term-partnership.png",
-    "/images/proven-track-record.png"
-  ];
 
   return (
     <section id="why-us" class="section why-us-section">
@@ -33,7 +32,10 @@ export const WhyUsSection = component$(() => {
           {whyUsItems.map((item, index) => (
             <div key={index} class="why-us-item">
               <div class="why-us-icon">
-                <img src={whyUsImages[index]} alt={item.title} />
+                {index === 0 && <EngineeringPrecisionImage />}
+                {index === 1 && <EnterpriseFocusedExpertiseImage />}
+                {index === 2 && <LongTermPartnershipImage />}
+                {index === 3 && <ProvenTrackRecordImage />}
               </div>
               <div class="why-us-content">
                 <h3>{item.title}</h3>

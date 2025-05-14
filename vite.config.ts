@@ -6,6 +6,7 @@ import { defineConfig, type UserConfig } from "vite";
 import { qwikVite } from "@builder.io/qwik/optimizer";
 import { qwikCity } from "@builder.io/qwik-city/vite";
 import tsconfigPaths from "vite-tsconfig-paths";
+import { imagetools } from "vite-imagetools";
 // TODO: Install @mdx-js/rollup package and uncomment the following line
 // import mdx from '@mdx-js/rollup';
 import pkg from "./package.json";
@@ -32,7 +33,8 @@ export default defineConfig(({ command, mode }): UserConfig => {
     plugins: [
       qwikCity(), 
       qwikVite(), 
-      tsconfigPaths()
+      tsconfigPaths(),
+      imagetools()
     ],
     // This tells Vite which dependencies to pre-build in dev mode.
     optimizeDeps: {

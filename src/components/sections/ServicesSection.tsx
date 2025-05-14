@@ -4,6 +4,12 @@ import { enTranslations } from '../../i18n/en';
 import { deTranslations } from '../../i18n/de';
 import sectionsStyles from './sections.css?inline';
 
+// Import optimized images for all services
+import EnterpriseDevImage from '~/media/enterprise-software-development.png?w=120&h=120&format=webp&jsx';
+import DigitalTransformationImage from '~/media/enterprise-digital-transformation.png?w=120&h=120&format=webp&jsx';
+import CloudSolutionImage from '~/media/enterprise-cloud-solution.png?w=120&h=120&format=webp&jsx';
+import CustomApplicationsImage from '~/media/custom-enterprise-applications.png?w=120&h=120&format=webp&jsx';
+
 export const ServicesSection = component$(() => {
   useStylesScoped$(sectionsStyles);
   
@@ -15,13 +21,6 @@ export const ServicesSection = component$(() => {
     ? enTranslations.services.items 
     : deTranslations.services.items;
   
-  // Map service items to images
-  const serviceImages = [
-    "/images/enterprise-software-development.png",
-    "/images/enterprise-digital-transformation.png",
-    "/images/enterprise-cloud-solution.png",
-    "/images/custom-enterprise-applications.png"
-  ];
 
   return (
     <section id="services" class="section services-section">
@@ -33,7 +32,10 @@ export const ServicesSection = component$(() => {
           {services.map((service, index) => (
             <div key={index} class="card service-card">
               <div class="service-icon">
-                <img src={serviceImages[index]} alt={service.title} />
+                {index === 0 && <EnterpriseDevImage />}
+                {index === 1 && <DigitalTransformationImage />}
+                {index === 2 && <CloudSolutionImage />}
+                {index === 3 && <CustomApplicationsImage />}
               </div>
               <h3>{service.title}</h3>
               <p>{service.description}</p>
