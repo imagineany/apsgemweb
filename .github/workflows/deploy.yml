@@ -47,14 +47,11 @@ jobs:
           # Update the origin URL in the static adapter config to use GitHub environment variables
           sed -i 's|origin: "https://yoursite.qwik.dev"|origin: "https://${{ github.repository_owner }}.github.io/'$REPO_NAME'"|' adapters/static/vite.config.ts
           
-          # Make a backup of the original vite.config.ts
-          cp vite.config.ts vite.config.ts.bak
-          
-          # Modify only the base path in vite.config.ts - replace the entire line
-          sed -i 's|base: process.env.GITHUB_REPOSITORY.*|base: "/",|' vite.config.ts
+          # Fix the base path duplication by setting the main vite.config.ts base to '/'
+          # when the static adapter is being used
+          sed -i 's|base: process.env.GITHUB_REPOSITORY|base: process.env.STATIC_ADAPTER ? "/" : process.env.GITHUB_REPOSITORY|' vite.config.ts
           
           # Add base path configuration to the static adapter to ensure correct asset paths
-          # First check if the base configuration already exists
           if ! grep -q "base:" adapters/static/vite.config.ts; then
             sed -i '/staticAdapter({/a\        base: "/'$REPO_NAME'/",\n        trailingSlash: true,' adapters/static/vite.config.ts
           fi
