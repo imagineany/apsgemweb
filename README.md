@@ -71,8 +71,16 @@ This project is configured to automatically deploy to GitHub Pages when changes 
 ### How it works
 
 1. When you push changes to the main branch, the GitHub Actions workflow is triggered
-2. The workflow builds the Qwik site with the static adapter
-3. The built site is then deployed to GitHub Pages
+2. The workflow installs the static adapter and configures it with the correct GitHub Pages URL
+3. It builds the Qwik site with the static adapter, ensuring proper base path configuration
+4. The built site is then deployed to GitHub Pages
+
+### Path Configuration
+
+The GitHub Actions workflow automatically:
+- Sets the correct origin URL in the static adapter configuration using GitHub environment variables
+- Prevents path duplication by configuring the base path correctly
+- Ensures the site is accessible at `https://[username].github.io/[repository-name]/`
 
 ### Setup Requirements
 
@@ -99,9 +107,18 @@ To test the GitHub Pages build locally:
 # Install the static adapter if not already installed
 pnpm qwik add static
 
+# Update the static adapter configuration
+# Edit adapters/static/vite.config.ts and set the origin to your local URL
+
 # Build the site
 pnpm build
 
 # Preview the built site
 pnpm preview
+```
+
+## Static Site Generator (Node.js)
+
+```shell
+pnpm build.server
 ```

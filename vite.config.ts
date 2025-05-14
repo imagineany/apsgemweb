@@ -27,6 +27,7 @@ export default defineConfig(({ command, mode }): UserConfig => {
     // Set base path for GitHub Pages deployment
     // Use environment variable GITHUB_REPOSITORY to get the correct base path
     // Format: /<repository-name>/
+    // When using static adapter, set to '/' to prevent path duplication
     base: process.env.GITHUB_REPOSITORY 
       ? `/${process.env.GITHUB_REPOSITORY.split('/')[1]}/` 
       : '/',
