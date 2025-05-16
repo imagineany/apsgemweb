@@ -34,20 +34,20 @@ export default defineConfig(({ command, mode }): UserConfig => {
     plugins: [
       qwikCity({
         rewriteRoutes: [
-          {
-            prefix: 'de',
-            paths: {
-              'case-studies': 'fallstudien',
-              'manufacturing-transformation': 'fertigungstransformation',
-              'financial-services': 'finanzdienstleistungen'
-            },
-          },
-          // Add a separate rule for the root path to avoid conflicts
-          {
-            paths: {
-              '': 'de'  // This will map the root path to /de/ without causing conflicts
-            },
-          }
+          // {
+          //   prefix: 'de',
+          //   paths: {
+          //     'case-studies': 'fallstudien',
+          //     'manufacturing-transformation': 'fertigungstransformation',
+          //     'financial-services': 'finanzdienstleistungen'
+          //   },
+          // },
+          // // Add a separate rule for the root path to avoid conflicts
+          // {
+          //   paths: {
+          //     '': 'de'  // This will map the root path to /de/ without causing conflicts
+          //   },
+          // }
         ],
       }),
       qwikVite(),
