@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 /* Global CSS Variables */
 :root {
   /* Color Scheme - Light Theme (Default) */
@@ -51,7 +53,7 @@
 }
 
 /* Dark Theme Variables */
-.dark-theme {
+.dark {
   --primary-color: #1D7CAD; /* Brighter blue for dark theme */
   --primary-color-light: #2E8FC0; /* Lighter blue */
   --primary-color-dark: #0F5A80; /* Darker blue */
@@ -76,7 +78,7 @@
 
 /* Media query for system dark mode preference */
 @media (prefers-color-scheme: dark) {
-  :root:not(.light-theme) {
+  :root:not(.light) {
     --primary-color: #1D7CAD; /* Brighter blue for dark theme */
     --primary-color-light: #2E8FC0; /* Lighter blue */
     --primary-color-dark: #0F5A80; /* Darker blue */
