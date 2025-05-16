@@ -41,11 +41,39 @@ jobs:
 
       - name: Configure Static Adapter
         run: |
+          # Set default values
+          USE_CUSTOM_DOMAIN="false"
+          TRAILING_SLASH="true"
+          
           # Extract repository name from github.repository
           REPO_NAME=$(echo ${{ github.repository }} | cut -d'/' -f2)
           
-          # Update the origin URL in the static adapter config to use GitHub environment variables
-          sed -i 's|origin: "https://yoursite.qwik.dev"|origin: "https://${{ github.repository_owner }}.github.io/'$REPO_NAME'"|' adapters/static/vite.config.ts
+          # Check if .domain.config file exists and read from it
+          if [ -f ".domain.config" ]; then
+            echo "Reading configuration from .domain.config file"
+            
+            # Read domain settings
+            CONFIG=$(cat .domain.config)
+            DOMAIN=$(echo $CONFIG | jq -r '.domain // empty')
+            USE_CUSTOM_DOMAIN=$(echo $CONFIG | jq -r '.useCustomDomain // false')
+            TRAILING_SLASH=$(echo $CONFIG | jq -r '.trailingSlash // true')
+            
+            echo "Domain settings: DOMAIN=$DOMAIN, USE_CUSTOM_DOMAIN=$USE_CUSTOM_DOMAIN, TRAILING_SLASH=$TRAILING_SLASH"
+          else
+            echo "No .domain.config file found, using default settings"
+          fi
+          
+          # Set the origin based on configuration
+          if [ "$USE_CUSTOM_DOMAIN" = "true" ] && [ ! -z "$DOMAIN" ]; then
+            ORIGIN="https://$DOMAIN"
+            echo "Using custom domain: $DOMAIN"
+          else
+            ORIGIN="https://${{ github.repository_owner }}.github.io/$REPO_NAME"
+            echo "Using GitHub Pages domain"
+          fi
+          
+          # Update the origin URL in the static adapter config
+          sed -i 's|origin: "https://yoursite.qwik.dev"|origin: "'$ORIGIN'"|' adapters/static/vite.config.ts
           
           # Fix the base path duplication by setting the main vite.config.ts base to '/'
           # when the static adapter is being used
@@ -53,7 +81,17 @@ jobs:
           
           # Add base path configuration to the static adapter to ensure correct asset paths
           if ! grep -q "base:" adapters/static/vite.config.ts; then
-            sed -i '/staticAdapter({/a\        base: "/'$REPO_NAME'/",\n        trailingSlash: true,' adapters/static/vite.config.ts
+            if [ "$USE_CUSTOM_DOMAIN" = "true" ] && [ ! -z "$DOMAIN" ]; then
+              sed -i '/staticAdapter({/a\        base: "/",\n        trailingSlash: '$TRAILING_SLASH',' adapters/static/vite.config.ts
+            else
+              sed -i '/staticAdapter({/a\        base: "/'$REPO_NAME'/",\n        trailingSlash: '$TRAILING_SLASH',' adapters/static/vite.config.ts
+            fi
+          fi
+          
+          # Create CNAME file if using custom domain
+          if [ "$USE_CUSTOM_DOMAIN" = "true" ] && [ ! -z "$DOMAIN" ]; then
+            echo "$DOMAIN" > public/CNAME
+            echo "Created CNAME file for $DOMAIN"
           fi
 
       - name: Build

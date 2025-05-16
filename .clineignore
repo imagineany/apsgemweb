@@ -1,0 +1,2 @@
+# Prevent AI assistants from reading sensitive configuration files
+.domain.config

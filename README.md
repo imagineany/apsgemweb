@@ -82,6 +82,32 @@ The GitHub Actions workflow automatically:
 - Prevents path duplication by configuring the base path correctly
 - Ensures the site is accessible at `https://[username].github.io/[repository-name]/`
 
+### Custom Domain Configuration
+
+You can configure a custom domain for your GitHub Pages site by creating a `.domain.config` file in the root of your repository. This file is ignored by AI assistants for privacy.
+
+1. Copy the template file:
+   ```shell
+   cp .domain.config.template .domain.config
+   ```
+
+2. Edit the `.domain.config` file with your domain settings:
+   ```json
+   {
+     "domain": "yourdomain.com",
+     "useCustomDomain": true,
+     "trailingSlash": true
+   }
+   ```
+
+3. The GitHub Actions workflow will automatically:
+   - Read your domain settings from the `.domain.config` file
+   - Configure the static adapter with the correct origin URL and base path
+   - Create a CNAME file with your custom domain
+   - Deploy the site to GitHub Pages with the proper configuration
+
+4. Make sure to also configure your custom domain in GitHub Pages settings and set up the appropriate DNS records with your domain provider.
+
 ### Setup Requirements
 
 To enable GitHub Pages deployment:
