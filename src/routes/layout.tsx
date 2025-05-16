@@ -1,7 +1,7 @@
-import { component$, $, Slot, useContextProvider, useSignal, useVisibleTask$ } from "@builder.io/qwik";
+import { component$, $, Slot, useContextProvider, useVisibleTask$, useSignal } from "@builder.io/qwik";
 import type { RequestHandler } from "@builder.io/qwik-city";
-import { useLocation, useNavigate } from "@builder.io/qwik-city";
-import { LanguageContext, type Language, getLanguageFromPath } from "../i18n/i18n";
+import { useLocation } from "@builder.io/qwik-city";
+import { LanguageContext, type Language, getLanguageFromPath, transformPath } from "../i18n/i18n";
 
 export const onGet: RequestHandler = async ({ cacheControl }) => {
   // Control caching for this request for best performance and to reduce hosting costs:
@@ -19,39 +19,50 @@ export default component$(() => {
   
   // Determine language based on the route
   const routeLang = getLanguageFromPath(location.url.pathname);
-  const lang = useSignal<Language>(routeLang);
-
-  // Use Qwik's navigation
-  const nav = useNavigate();
   
-  // Create a serializable function for setting the language
-  const setLang = $((newLang: Language) => {
+  // Create a language signal first
+  const lang = useSignal<Language>(routeLang);
+  
+  // Define setLang function separately to avoid circular references
+  const setLang = $((newLang: Language, currentPath?: string) => {
     console.log('Setting language to:', newLang);
+    
+    // Update the language signal
     lang.value = newLang;
     console.log('Language set to:', lang.value);
     
-    // Use Qwik's navigation
-    if (newLang === 'de') {
-      nav('/de/');
+    // Use navigation with route rewriting
+    if (currentPath) {
+      // Use the transformPath helper to get the correct path for the target language
+      const targetPath = transformPath(currentPath, newLang);
+      console.log('Navigating to:', targetPath);
+      
+      // Use window.location for a full page reload to ensure route rewriting takes effect
+      window.location.href = targetPath;
     } else {
-      nav('/');
+      // Fallback to home pages if no path provided
+      if (newLang === 'de') {
+        window.location.href = '/de/';
+      } else {
+        window.location.href = '/';
+      }
     }
   });
+  
+  // Now create the context with the signal and function
+  const langContext = {
+    get lang() {
+      return lang.value;
+    },
+    setLang
+  };
 
   // Provide the language context to all components
-  useContextProvider(
-    LanguageContext,
-    {
-      get lang() {
-        return lang.value;
-      },
-      setLang
-    }
-  );
+  useContextProvider(LanguageContext, langContext);
 
   // Initialize language on client side
   useVisibleTask$(({ track }) => {
-    // Track language changes
+    // Track the language signal directly
     track(() => lang.value);
     
     // Set HTML lang attribute

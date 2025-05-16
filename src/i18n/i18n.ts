@@ -18,7 +18,7 @@ const translations: Record<Language, Translations> = {
 // Create a context for the current language
 export const LanguageContext = createContextId<{
   lang: Language;
-  setLang: (lang: Language) => void;
+  setLang: (lang: Language, currentPath?: string) => void;
 }>('language-context');
 
 // Create a function to provide translations
@@ -45,8 +45,35 @@ export const useTranslation = (lang: Language = 'en') => {
 
 // Helper to get language from route path
 export const getLanguageFromPath = (path: string): Language => {
+  // With route rewriting, we need to check if the path starts with the language prefix
   if (path.startsWith('/de')) {
     return 'de';
   }
   return 'en';
+};
+
+// Helper to transform paths between languages
+export const transformPath = (path: string, targetLang: Language): string => {
+  const currentLang = getLanguageFromPath(path);
+  
+  // If already in the target language, no transformation needed
+  if (currentLang === targetLang) {
+    return path;
+  }
+  
+  // English to German
+  if (currentLang === 'en' && targetLang === 'de') {
+    return path === '/' ? '/de/' : `/de${path}`;
+  }
+  
+  // German to English
+  if (currentLang === 'de' && targetLang === 'en') {
+    // Remove the /de prefix
+    const newPath = path.replace(/^\/de/, '');
+    // If path is empty after removing prefix, set to root
+    return newPath || '/';
+  }
+  
+  // Fallback
+  return path;
 };

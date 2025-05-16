@@ -32,7 +32,21 @@ export default defineConfig(({ command, mode }): UserConfig => {
       ? `/${process.env.GITHUB_REPOSITORY.split("/")[1]}/`
       : "/",
     plugins: [
-      qwikCity(),
+      qwikCity({
+        rewriteRoutes: [
+          {
+            prefix: 'de',
+            paths: {
+              // Add route translations here
+              // Format: 'english-route': 'german-route'
+              // For example:
+              'case-studies': 'fallstudien',
+              'manufacturing-transformation': 'fertigungstransformation',
+              'financial-services': 'finanzdienstleistungen'
+            },
+          },
+        ],
+      }),
       qwikVite(),
       tsconfigPaths(),
       imagetools(),
