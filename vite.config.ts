@@ -37,14 +37,17 @@ export default defineConfig(({ command, mode }): UserConfig => {
           {
             prefix: 'de',
             paths: {
-              // Add route translations here
-              // Format: 'english-route': 'german-route'
-              // For example:
               'case-studies': 'fallstudien',
               'manufacturing-transformation': 'fertigungstransformation',
               'financial-services': 'finanzdienstleistungen'
             },
           },
+          // Add a separate rule for the root path to avoid conflicts
+          {
+            paths: {
+              '': 'de'  // This will map the root path to /de/ without causing conflicts
+            },
+          }
         ],
       }),
       qwikVite(),
