@@ -6,62 +6,86 @@ export const deTranslations = {
   nav: {
     services: "Leistungen",
     whyUs: "Warum Wir",
+    workflow: "Intelligente Workflows",
     caseStudies: "Fallstudien",
     team: "Unser Team",
     contact: "Kontakt"
   },
   hero: {
-    title: "Unternehmenssoftwarelösungen mit höchster Präzision entwickelt",
-    subtitle: "Unternehmensherausforderungen in digitale Vorteile umwandeln",
-    cta: "Beratungstermin vereinbaren"
+    title: "Präzisionslösungen für Ihre spezifischen Unternehmensherausforderungen",
+    subtitle: "Von maßgeschneiderter Software bis hin zu intelligenten Workflows, wir verwandeln Ihre einzigartigen Geschäftsprobleme in messbare Vorteile",
+    cta: "Besprechen Sie Ihre spezifische Herausforderung"
   },
   services: {
-    title: "Unsere Leistungen",
-    subtitle: "Umfassende Unternehmenslösungen, die auf Ihre Geschäftsanforderungen zugeschnitten sind",
+    title: "Unternehmenslösungen auf Ihre Bedürfnisse zugeschnitten",
+    subtitle: "Wir adressieren Ihre spezifischen Herausforderungen mit präzisionsgerecht entwickelten Lösungen",
     items: [
       {
-        title: "Enterprise-Softwareentwicklung",
-        description: "Maßgeschneiderte Softwarelösungen für Unternehmen mit Fokus auf Integration und Skalierbarkeit."
+        title: "Ihre Unternehmensentwicklung",
+        description: "Maßgeschneiderte Softwarelösungen, die speziell für Ihre unternehmensweiten Abläufe und Integrationsanforderungen entwickelt wurden."
       },
       {
-        title: "Digitale Transformation",
-        description: "Strategische Beratung und Umsetzung zur Modernisierung Ihrer Geschäftsprozesse."
+        title: "Ihre digitale Transformation",
+        description: "Strategische Beratung und Umsetzung zur Modernisierung Ihrer spezifischen Geschäftsprozesse mit gezielten Verbesserungen."
       },
       {
-        title: "Cloud-Lösungen",
-        description: "Sichere, skalierbare Cloud-Infrastruktur und Migrationsdienste."
+        title: "Ihre intelligenten Workflows",
+        description: "KI-gestützte Workflow-Transformation, die sich an Ihre einzigartigen Prozesse anpasst, Entscheidungen automatisiert und Ergebnisse verbessert."
       },
       {
-        title: "Maßgeschneiderte Unternehmensanwendungen",
-        description: "Spezialisierte Anwendungen, die entwickelt wurden, um Ihre einzigartigen Geschäftsherausforderungen zu bewältigen."
+        title: "Ihre agentischen Lösungen",
+        description: "Unternehmens-KI-Agenten, die auf Ihre Wissensbasis zugreifen und komplexe Aufgaben in Ihrer gesamten Organisation automatisieren."
       }
     ]
   },
   whyUs: {
-    title: "Warum Uns Wählen",
-    subtitle: "Ingenieurskunst angewandt auf die Softwareentwicklung",
+    title: "Warum mit uns zusammenarbeiten",
+    subtitle: "Unser Ansatz zur Lösung Ihrer spezifischen Unternehmensherausforderungen",
     items: [
       {
-        title: "Technische Präzision",
-        description: "Akribische Aufmerksamkeit für Details und Qualität in jedem Projekt."
+        title: "Präziser Problemfokus",
+        description: "Wir identifizieren und konzentrieren uns auf Ihren kritischsten Schmerzpunkt und klären genau, was gelöst werden muss, bevor wir Lösungen vorschlagen."
       },
       {
-        title: "Unternehmensfokussierte Expertise",
-        description: "Spezialisiertes Wissen in der Entwicklung von Lösungen für große Organisationen."
+        title: "Maßgeschneiderte Lösungsgestaltung",
+        description: "Jede Lösung wird speziell für Ihre spezifische Herausforderung entwickelt, sei es durch traditionelle Software oder intelligente KI-Systeme."
       },
       {
-        title: "Langfristige Partnerschaft",
-        description: "Wir bauen dauerhafte Beziehungen auf, die auf Ihren kontinuierlichen Erfolg ausgerichtet sind."
+        title: "Klarer Implementierungspfad",
+        description: "Wir bieten einen unkomplizierten, schrittweisen Ansatz zur Implementierung Ihrer Lösung und beseitigen Komplexität und Unsicherheit."
       },
       {
-        title: "Bewährte Erfolgsbilanz",
-        description: "Erfolgreiche Implementierungen für führende Unternehmen in verschiedenen Branchen."
+        title: "Messbarer Geschäftseinfluss",
+        description: "Unsere Lösungen liefern quantifizierbare Ergebnisse, die auf Ihre spezifischen Geschäftsziele abgestimmt sind und langfristigen Wert schaffen."
       }
     ]
   },
+  workflow: {
+    title: "Transformation Ihrer Unternehmens-Workflows",
+    subtitle: "Von manuellen Prozessen zu intelligenten, adaptiven Systemen",
+    traditional: {
+      title: "Traditioneller Ansatz",
+      items: [
+        "Statische Prozesse, die sich nicht an Veränderungen anpassen können",
+        "Manuelle Entscheidungspunkte, die Engpässe verursachen",
+        "Wissen, das in Abteilungen oder bei Einzelpersonen isoliert ist",
+        "Generische Lösungen, die nicht zu Ihren Bedürfnissen passen"
+      ]
+    },
+    intelligent: {
+      title: "Ihr intelligenter Workflow",
+      items: [
+        "Adaptive Prozesse, die sich mit Ihrem Unternehmen weiterentwickeln",
+        "KI-gestützte Entscheidungen, die Abläufe beschleunigen",
+        "Wissen, das über sichere KI-Agenten zugänglich ist",
+        "Maßgeschneiderte Lösungen, die Ihre spezifischen Herausforderungen adressieren"
+      ]
+    },
+    cta: "Transformieren Sie Ihre Workflows"
+  },
   caseStudies: {
     title: "Fallstudien",
-    subtitle: "Reale Ergebnisse für Unternehmenskunden",
+    subtitle: "Lösung spezifischer Herausforderungen mit messbaren Ergebnissen",
     viewAll: "Alle Fallstudien anzeigen",
     items: [
       {
@@ -108,8 +132,8 @@ export const deTranslations = {
     description: "Unser Team kombiniert tiefes technisches Fachwissen mit Branchenkenntnissen, um Lösungen zu liefern, die echten Geschäftswert schaffen. Mit jahrzehntelanger kollektiver Erfahrung in der Unternehmenssoftwareentwicklung bringen wir Ingenieurskunst in jedes Projekt ein."
   },
   contact: {
-    title: "Kontakt aufnehmen",
-    subtitle: "Bereit, Ihr Unternehmen zu transformieren?",
+    title: "Bereit, Ihre Unternehmensherausforderung anzugehen?",
+    subtitle: "Vereinbaren Sie eine Beratung, um Ihre spezifischen Bedürfnisse zu besprechen",
     name: "Name",
     email: "E-Mail",
     company: "Unternehmen",
@@ -120,7 +144,7 @@ export const deTranslations = {
     emailAddress: "kontakt@techprecision.de",
     scheduleCall: "Termin vereinbaren",
     bookConsultation: "30-minütige Beratung buchen",
-    scheduleButton: "Beratungstermin vereinbaren"
+    scheduleButton: "Vereinbaren Sie Ihre Beratung"
   },
   footer: {
     copyright: "© 2025 TechPrecision GmbH. Alle Rechte vorbehalten.",

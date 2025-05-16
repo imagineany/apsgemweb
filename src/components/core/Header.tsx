@@ -41,6 +41,9 @@ export const Header = component$(() => {
                 <a href="#why-us">{t('nav.whyUs')}</a>
               </li>
               <li>
+                <a href="#workflow">{t('nav.workflow')}</a>
+              </li>
+              <li>
                 <a href="#case-studies">{t('nav.caseStudies')}</a>
               </li>
               <li>

@@ -1,4 +1,4 @@
-import { component$, useStylesScoped$, useContext, useSignal, $ } from '@builder.io/qwik';
+import { component$, useStylesScoped$, useContext, useStore, useVisibleTask$, useSignal } from '@builder.io/qwik';
 import { useTranslation, LanguageContext } from '../../i18n/i18n';
 import { Link } from '@builder.io/qwik-city';
 import sectionsStyles from './sections.css?inline';
@@ -21,17 +21,42 @@ import { caseStudyInfo as deCaseStudyInfo } from '../../i18n/case-studies/de';
 export const CaseStudiesSection = component$(() => {
   useStylesScoped$(sectionsStyles);
   
-  // Dialog state
-  const dialogOpen = useSignal(false);
-  const selectedCaseStudy = useSignal<number | null>(null);
-  
-  const openDialog = $((index: number) => {
-    selectedCaseStudy.value = index;
-    dialogOpen.value = true;
+  // Dialog state using a store object
+  const dialogState = useStore({
+    isOpen: false,
+    selectedCaseStudy: null as number | null
   });
   
-  const closeDialog = $(() => {
-    dialogOpen.value = false;
+  // Signals to trigger dialog actions
+  const shouldOpenDialog = useSignal<number | null>(null);
+  const shouldCloseDialog = useSignal(false);
+  
+  // Handle dialog opening
+  if (shouldOpenDialog.value !== null) {
+    const index = shouldOpenDialog.value;
+    shouldOpenDialog.value = null;
+    console.log('Opening dialog for case study:', index);
+    dialogState.selectedCaseStudy = index;
+    dialogState.isOpen = true;
+  }
+  
+  // Handle dialog closing
+  if (shouldCloseDialog.value) {
+    shouldCloseDialog.value = false;
+    console.log('Closing dialog');
+    dialogState.isOpen = false;
+    dialogState.selectedCaseStudy = null;
+  }
+  
+  // Use a visible task to ensure dialog state is properly synchronized
+  useVisibleTask$(({ track }) => {
+    // Track the selected case study
+    const caseStudy = track(() => dialogState.selectedCaseStudy);
+    
+    // If a case study is selected, ensure the dialog is open
+    if (caseStudy !== null && !dialogState.isOpen) {
+      dialogState.isOpen = true;
+    }
   });
   
   const languageContext = useContext(LanguageContext);
@@ -71,7 +96,10 @@ export const CaseStudiesSection = component$(() => {
               <p>{study.description}</p>
               <button 
                 class="case-study-link" 
-                onClick$={() => openDialog(index)}
+                onClick$={() => {
+                  console.log('Setting shouldOpenDialog to:', index);
+                  shouldOpenDialog.value = index;
+                }}
               >
                 {study.readMore} <MatArrowForwardOutlined />
               </button>
@@ -87,11 +115,14 @@ export const CaseStudiesSection = component$(() => {
       </div>
       
       {/* Case Study Dialog */}
-      {selectedCaseStudy.value !== null && (
+      {dialogState.selectedCaseStudy !== null && (
         <CaseStudyDialog
-          isOpen={dialogOpen.value}
-          onClose$={closeDialog}
-          caseStudyId={String(selectedCaseStudy.value)}
+          isOpen={dialogState.isOpen}
+          onClose$={() => {
+            console.log('Setting shouldCloseDialog to true');
+            shouldCloseDialog.value = true;
+          }}
+          caseStudyId={String(dialogState.selectedCaseStudy)}
         />
       )}
     </section>

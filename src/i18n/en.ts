@@ -6,62 +6,86 @@ export const enTranslations = {
   nav: {
     services: "Services",
     whyUs: "Why Choose Us",
+    workflow: "Intelligent Workflows",
     caseStudies: "Case Studies",
     team: "Our Team",
     contact: "Contact"
   },
   hero: {
-    title: "Enterprise Software Solutions Engineered with Exceptional Precision",
-    subtitle: "Transforming enterprise challenges into digital advantages",
-    cta: "Schedule a Consultation"
+    title: "Precision Solutions for Your Specific Enterprise Challenges",
+    subtitle: "From custom software to intelligent workflows, we transform your unique business problems into measurable advantages",
+    cta: "Discuss Your Specific Challenge"
   },
   services: {
-    title: "Our Services",
-    subtitle: "Comprehensive enterprise solutions tailored to your business needs",
+    title: "Enterprise Solutions Tailored to Your Needs",
+    subtitle: "Addressing your specific challenges with precision-engineered solutions",
     items: [
       {
-        title: "Enterprise Software Development",
-        description: "Custom software solutions designed for enterprise-scale operations and integration."
+        title: "Your Enterprise Development",
+        description: "Custom software solutions built specifically for your enterprise-scale operations and integration requirements."
       },
       {
-        title: "Digital Transformation",
-        description: "Strategic guidance and implementation to modernize your business processes."
+        title: "Your Digital Transformation",
+        description: "Strategic guidance and implementation to modernize your specific business processes with targeted improvements."
       },
       {
-        title: "Cloud Solutions",
-        description: "Secure, scalable cloud infrastructure and migration services."
+        title: "Your Intelligent Workflows",
+        description: "AI-powered workflow transformation that adapts to your unique processes, automating decisions and enhancing outcomes."
       },
       {
-        title: "Custom Enterprise Applications",
-        description: "Specialized applications built to address your unique business challenges."
+        title: "Your Agentic Solutions",
+        description: "Enterprise AI agents that access your knowledge base and automate complex tasks across your organization."
       }
     ]
   },
   whyUs: {
-    title: "Why Choose Us",
-    subtitle: "Engineering excellence applied to software development",
+    title: "Why Partner With Us",
+    subtitle: "Our approach to solving your specific enterprise challenges",
     items: [
       {
-        title: "Engineering Precision",
-        description: "Meticulous attention to detail and quality in every project."
+        title: "Precision Problem Focus",
+        description: "We identify and focus on your most critical pain point, clarifying exactly what needs to be solved before proposing solutions."
       },
       {
-        title: "Enterprise-Focused Expertise",
-        description: "Specialized knowledge in developing solutions for large organizations."
+        title: "Tailored Solution Design",
+        description: "Each solution is custom-engineered for your specific challenge, whether through traditional software or intelligent AI systems."
       },
       {
-        title: "Long-Term Partnership",
-        description: "We build lasting relationships focused on your continued success."
+        title: "Clear Implementation Path",
+        description: "We provide a straightforward, step-by-step approach to implementing your solution, eliminating complexity and uncertainty."
       },
       {
-        title: "Proven Track Record",
-        description: "Successful implementations for leading enterprises across industries."
+        title: "Measurable Business Impact",
+        description: "Our solutions deliver quantifiable results aligned with your specific business goals, creating long-term value."
       }
     ]
   },
+  workflow: {
+    title: "Transforming Your Enterprise Workflows",
+    subtitle: "From manual processes to intelligent, adaptive systems",
+    traditional: {
+      title: "Traditional Approach",
+      items: [
+        "Static processes that can't adapt to changes",
+        "Manual decision points creating bottlenecks",
+        "Knowledge siloed in departments or individuals",
+        "Generic solutions that don't fit your needs"
+      ]
+    },
+    intelligent: {
+      title: "Your Intelligent Workflow",
+      items: [
+        "Adaptive processes that evolve with your business",
+        "AI-powered decisions that accelerate operations",
+        "Knowledge accessible through secure AI agents",
+        "Tailored solutions addressing your specific challenges"
+      ]
+    },
+    cta: "Transform Your Workflows"
+  },
   caseStudies: {
     title: "Case Studies",
-    subtitle: "Real results for enterprise clients",
+    subtitle: "Solving specific challenges with measurable results",
     viewAll: "View All Case Studies",
     items: [
       {
@@ -108,8 +132,8 @@ export const enTranslations = {
     description: "Our team combines deep technical expertise with industry knowledge to deliver solutions that drive real business value. With decades of collective experience in enterprise software development, we bring engineering excellence to every project."
   },
   contact: {
-    title: "Get in Touch",
-    subtitle: "Ready to transform your enterprise?",
+    title: "Ready to Address Your Enterprise Challenge?",
+    subtitle: "Schedule a consultation to discuss your specific needs",
     name: "Name",
     email: "Email",
     company: "Company",
@@ -120,7 +144,7 @@ export const enTranslations = {
     emailAddress: "contact@techprecision.de",
     scheduleCall: "Schedule a Call",
     bookConsultation: "Book a 30-minute consultation",
-    scheduleButton: "Schedule a Consultation"
+    scheduleButton: "Schedule Your Consultation"
   },
   footer: {
     copyright: "© 2025 TechPrecision GmbH. All rights reserved.",

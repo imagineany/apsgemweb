@@ -1,6 +1,6 @@
 import { component$, $, Slot, useContextProvider, useSignal, useVisibleTask$ } from "@builder.io/qwik";
 import type { RequestHandler } from "@builder.io/qwik-city";
-import { useLocation } from "@builder.io/qwik-city";
+import { useLocation, useNavigate } from "@builder.io/qwik-city";
 import { LanguageContext, type Language, getLanguageFromPath } from "../i18n/i18n";
 import { ThemeContext, type Theme, getPreferredTheme } from "../theme/theme";
 
@@ -25,17 +25,20 @@ export default component$(() => {
   // Initialize theme state with a placeholder value that will be updated in useVisibleTask$
   const theme = useSignal<Theme>('light');
 
+  // Use Qwik's navigation
+  const nav = useNavigate();
+  
   // Create a serializable function for setting the language
   const setLang = $((newLang: Language) => {
     console.log('Setting language to:', newLang);
     lang.value = newLang;
     console.log('Language set to:', lang.value);
     
-    // Navigate to the appropriate route
+    // Use Qwik's navigation
     if (newLang === 'de') {
-      window.location.href = '/de/';
+      nav('/de/');
     } else {
-      window.location.href = '/';
+      nav('/');
     }
   });
   

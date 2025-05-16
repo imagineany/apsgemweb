@@ -1,49 +1,78 @@
-import { component$, useSignal, useVisibleTask$ } from '@builder.io/qwik';
+import { component$, useContext, useVisibleTask$, useSignal } from '@builder.io/qwik';
 import { MatLightModeOutlined, MatDarkModeOutlined } from '@qwikest/icons/material';
+import { ThemeContext } from '../../theme/theme';
 
 export const ThemeToggle = component$(() => {
-  const isDarkTheme = useSignal(false);
+  const themeContext = useContext(ThemeContext);
+  const currentMode = useSignal<'light' | 'dark'>('light');
+  const shouldToggleTheme = useSignal(false);
   
-  // Initialize the theme state on the client side and track changes
+  // Update current mode when theme context changes
+  if (currentMode.value !== (themeContext.theme === 'dark' ? 'dark' : 'light')) {
+    currentMode.value = themeContext.theme === 'dark' ? 'dark' : 'light';
+  }
+  
+  // Check if we need to toggle the theme
+  if (shouldToggleTheme.value) {
+    shouldToggleTheme.value = false;
+    themeContext.setTheme(themeContext.theme === 'dark' ? 'light' : 'dark');
+  }
+  
+  // Apply theme changes to document (client-side only)
   useVisibleTask$(({ track }) => {
-    // Initial setup
-    if (!isDarkTheme.value) {
-      isDarkTheme.value = document.documentElement.classList.contains('dark-theme');
-      console.log('ThemeToggle initialized, isDarkTheme:', isDarkTheme.value);
-    }
+    // Track the theme context
+    const theme = track(() => themeContext.theme);
     
-    // Track changes to isDarkTheme
-    track(() => isDarkTheme.value);
-    console.log('ThemeToggle tracked change, isDarkTheme:', isDarkTheme.value);
+    // Apply theme class to document when theme changes
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark-theme');
+      document.documentElement.classList.remove('light-theme');
+    } else {
+      document.documentElement.classList.remove('dark-theme');
+      document.documentElement.classList.add('light-theme');
+    }
+  });
+  
+  // Track DOM changes to ensure UI is in sync with actual theme
+  useVisibleTask$(({ cleanup }) => {
+    if (typeof document === 'undefined') return;
+    
+    const updateCurrentMode = () => {
+      if (document.documentElement.classList.contains('dark-theme')) {
+        currentMode.value = 'dark';
+      } else {
+        currentMode.value = 'light';
+      }
+    };
+    
+    // Initial update
+    updateCurrentMode();
+    
+    // Observe DOM changes
+    const observer = new MutationObserver(() => {
+      updateCurrentMode();
+    });
+    
+    observer.observe(document.documentElement, { 
+      attributes: true, 
+      attributeFilter: ['class'] 
+    });
+    
+    // Clean up the observer when the component is destroyed
+    cleanup(() => observer.disconnect());
   });
   
   return (
     <div class="theme-toggle">
       <button
         onClick$={() => {
-          const currentIsDark = isDarkTheme.value;
-          console.log('Current theme before toggle:', currentIsDark ? 'dark' : 'light');
-          
-          if (currentIsDark) {
-            // Switch to light theme
-            document.documentElement.classList.remove('dark-theme');
-            document.documentElement.classList.add('light-theme');
-            localStorage.setItem('theme', 'light');
-            isDarkTheme.value = false;
-          } else {
-            // Switch to dark theme
-            document.documentElement.classList.add('dark-theme');
-            document.documentElement.classList.remove('light-theme');
-            localStorage.setItem('theme', 'dark');
-            isDarkTheme.value = true;
-          }
-          
-          console.log('Theme toggled to:', !currentIsDark ? 'dark' : 'light');
+          console.log('Setting shouldToggleTheme to true');
+          shouldToggleTheme.value = true;
         }}
-        aria-label={`Switch to ${isDarkTheme.value ? 'light' : 'dark'} mode`}
-        title={`Switch to ${isDarkTheme.value ? 'light' : 'dark'} mode`}
+        aria-label={`Switch to ${currentMode.value === 'light' ? 'dark' : 'light'} mode`}
+        title={`Switch to ${currentMode.value === 'light' ? 'dark' : 'light'} mode`}
       >
-        {isDarkTheme.value ? 
+        {currentMode.value === 'dark' ? 
           <MatLightModeOutlined /> : 
           <MatDarkModeOutlined />
         }

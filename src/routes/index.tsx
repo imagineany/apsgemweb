@@ -8,6 +8,7 @@ import { Footer } from "../components/core/Footer";
 import { HeroSection } from "../components/sections/HeroSection";
 import { ServicesSection } from "../components/sections/ServicesSection";
 import { WhyUsSection } from "../components/sections/WhyUsSection";
+import { WorkflowSection } from "../components/sections/WorkflowSection";
 import { CaseStudiesSection } from "../components/sections/CaseStudiesSection";
 import { TeamSection } from "../components/sections/TeamSection";
 import { ContactSection } from "../components/sections/ContactSection";
@@ -20,6 +21,7 @@ export default component$(() => {
         <HeroSection />
         <ServicesSection />
         <WhyUsSection />
+        <WorkflowSection />
         <CaseStudiesSection />
         <TeamSection />
         <ContactSection />
