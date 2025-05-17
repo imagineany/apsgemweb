@@ -2,6 +2,10 @@
 
 /* Global CSS Variables */
 :root {
+  /* Language-specific settings */
+  --word-break-normal: normal;
+  --hyphens-auto: auto;
+  --overflow-wrap: normal;
   /* Color Scheme - Light Theme (Default) */
   --primary-color: #0B3C5D; /* Deep blue */
   --primary-color-light: #1D5B7C; /* Lighter blue */
@@ -359,4 +363,46 @@ button:hover, .button:hover {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border-width: 0;
+}
+
+/* Language-specific styles */
+html[lang="de"] {
+  /* German text is typically longer, so we need to handle word breaking */
+  --word-break-normal: break-word;
+  --hyphens-auto: auto;
+  --overflow-wrap: break-word;
+}
+
+html[lang="de"] body {
+  word-break: var(--word-break-normal);
+  hyphens: var(--hyphens-auto);
+  overflow-wrap: var(--overflow-wrap);
+}
+
+/* Adjust font sizes for German on smaller screens */
+@media (max-width: 767px) {
+  html[lang="de"] h1 {
+    font-size: 2.2rem;
+  }
+  
+  html[lang="de"] h2 {
+    font-size: 1.8rem;
+  }
+  
+  html[lang="de"] h3 {
+    font-size: 1.5rem;
+  }
+  
+  html[lang="de"] .hero-section h1 {
+    font-size: 2.5rem;
+  }
+  
+  html[lang="de"] .hero-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  html[lang="de"] .button {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.95rem;
+  }
 }

@@ -81,6 +81,8 @@
   border-radius: 4px;
   cursor: pointer;
   transition: all 0.3s ease;
+  min-width: 40px;
+  text-align: center;
 }
 
 .language-toggle button.active,
@@ -134,5 +136,32 @@
   
   .mobile-menu-toggle {
     display: block;
+  }
+  
+  .header-actions {
+    gap: 0.5rem;
+  }
+}
+
+/* Language-specific responsive adjustments */
+@media (max-width: 767px) {
+  html[lang="de"] .main-nav a {
+    font-size: 0.95rem;
+    word-break: break-word;
+    hyphens: auto;
+  }
+  
+  html[lang="de"] .header-actions {
+    gap: 0.25rem;
+  }
+  
+  html[lang="de"] .language-toggle {
+    gap: 5px;
+  }
+  
+  html[lang="de"] .language-toggle button,
+  html[lang="de"] .language-toggle .language-button {
+    padding: 4px 8px;
+    font-size: 0.9rem;
   }
 }
