@@ -1,7 +1,7 @@
 export const enTranslations = {
   meta: {
     title: "TechPrecision - Enterprise Software Development",
-    description: "Software development company based in Germany providing enterprise solutions with precision and reliability."
+    description: "Software development company providing AI solutions with precision and reliability."
   },
   nav: {
     services: "Services",
@@ -12,13 +12,13 @@ export const enTranslations = {
     contact: "Contact"
   },
   hero: {
-    title: "Precision Solutions for Your Specific Enterprise Challenges",
-    subtitle: "From custom software to intelligent workflows, we transform your unique business problems into measurable advantages",
+    title: "AI Solutions for your specific Business Challenges",
+    subtitle: "We build custom software and intelligent workflows that deliver measurable outcomes.",
     cta: "Discuss Your Specific Challenge"
   },
   services: {
-    title: "Enterprise Solutions Tailored to Your Needs",
-    subtitle: "Addressing your specific challenges with precision-engineered solutions",
+    title: "Business Solutions Tailored to Your Needs",
+    subtitle: "Addressing your specific challenges with AI-powered solutions",
     items: [
       {
         title: "Your Enterprise Development",
@@ -40,7 +40,7 @@ export const enTranslations = {
   },
   whyUs: {
     title: "Why Partner With Us",
-    subtitle: "Our approach to solving your specific enterprise challenges",
+    subtitle: "Our approach to solving your specific business challenges",
     items: [
       {
         title: "Precision Problem Focus",
@@ -61,7 +61,7 @@ export const enTranslations = {
     ]
   },
   workflow: {
-    title: "Transforming Your Enterprise Workflows",
+    title: "Transforming Your Business Workflows",
     subtitle: "From manual processes to intelligent, adaptive systems",
     traditional: {
       title: "Traditional Approach",
@@ -132,7 +132,7 @@ export const enTranslations = {
     description: "Our team combines deep technical expertise with industry knowledge to deliver solutions that drive real business value. With decades of collective experience in enterprise software development, we bring engineering excellence to every project."
   },
   contact: {
-    title: "Ready to Address Your Enterprise Challenge?",
+    title: "Ready to Address Your Business Challenge?",
     subtitle: "Schedule a consultation to discuss your specific needs",
     name: "Name",
     email: "Email",

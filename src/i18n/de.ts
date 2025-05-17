@@ -1,7 +1,7 @@
 export const deTranslations = {
   meta: {
     title: "TechPrecision - Enterprise-Softwareentwicklung",
-    description: "Softwareentwicklungsfirma mit Sitz in Deutschland, die Unternehmenslösungen mit Präzision und Zuverlässigkeit anbietet."
+    description: "Softwareentwicklungsfirma, die KI-Lösungen mit Präzision und Zuverlässigkeit anbietet."
   },
   nav: {
     services: "Leistungen",
@@ -12,13 +12,13 @@ export const deTranslations = {
     contact: "Kontakt"
   },
   hero: {
-    title: "Präzisionslösungen für Ihre spezifischen Unternehmensherausforderungen",
-    subtitle: "Von maßgeschneiderter Software bis hin zu intelligenten Workflows, wir verwandeln Ihre einzigartigen Geschäftsprobleme in messbare Vorteile",
+    title: "KI-Lösungen für Ihre spezifischen geschäftlichen Herausforderungen",
+    subtitle: "Wir entwickeln maßgeschneiderte Software und intelligente Workflows, die messbare Ergebnisse liefern.",
     cta: "Besprechen Sie Ihre spezifische Herausforderung"
   },
   services: {
-    title: "Unternehmenslösungen auf Ihre Bedürfnisse zugeschnitten",
-    subtitle: "Wir adressieren Ihre spezifischen Herausforderungen mit präzisionsgerecht entwickelten Lösungen",
+    title: "Geschäftslösungen auf Ihre Bedürfnisse zugeschnitten",
+    subtitle: "Wir adressieren Ihre spezifischen Herausforderungen mit KI-gestützten Lösungen",
     items: [
       {
         title: "Ihre Unternehmensentwicklung",
@@ -40,7 +40,7 @@ export const deTranslations = {
   },
   whyUs: {
     title: "Warum mit uns zusammenarbeiten",
-    subtitle: "Unser Ansatz zur Lösung Ihrer spezifischen Unternehmensherausforderungen",
+    subtitle: "Unser Ansatz zur Lösung Ihrer spezifischen geschäftlichen Herausforderungen",
     items: [
       {
         title: "Präziser Problemfokus",
@@ -61,7 +61,7 @@ export const deTranslations = {
     ]
   },
   workflow: {
-    title: "Transformation Ihrer Unternehmens-Workflows",
+    title: "Transformation Ihrer geschäftlichen Workflows",
     subtitle: "Von manuellen Prozessen zu intelligenten, adaptiven Systemen",
     traditional: {
       title: "Traditioneller Ansatz",
@@ -129,10 +129,10 @@ export const deTranslations = {
   team: {
     title: "Unser Team",
     subtitle: "Experten, die sich Ihrem Erfolg widmen",
-    description: "Unser Team kombiniert tiefes technisches Fachwissen mit Branchenkenntnissen, um Lösungen zu liefern, die echten Geschäftswert schaffen. Mit jahrzehntelanger kollektiver Erfahrung in der Unternehmenssoftwareentwicklung bringen wir Ingenieurskunst in jedes Projekt ein."
+    description: "Unser Team kombiniert tiefes technisches Fachwissen mit Branchenkenntnissen, um Lösungen zu liefern, die echten Geschäftswert schaffen. Mit jahrzehntelanger kollektiver Erfahrung in der Unternehmens-Softwareentwicklung bringen wir Ingenieurskunst in jedes Projekt ein."
   },
   contact: {
-    title: "Bereit, Ihre Unternehmensherausforderung anzugehen?",
+    title: "Bereit, Ihre geschäftliche Herausforderung anzugehen?",
     subtitle: "Vereinbaren Sie eine Beratung, um Ihre spezifischen Bedürfnisse zu besprechen",
     name: "Name",
     email: "E-Mail",
