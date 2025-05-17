@@ -119,7 +119,7 @@ export const caseStudyInfo = [
         <li>Integrated inventory, POS, finance, and HR modules in a single platform</li>
         <li>Implemented real-time inventory tracking across all locations</li>
         <li>Created advanced analytics and reporting dashboards</li>
-        <li>Developed an AI-powered demand forecasting system</li>
+        <li>Developed an AI demand forecasting system</li>
         <li>Built a comprehensive customer loyalty and insights platform</li>
       </ul>
       
@@ -184,12 +184,12 @@ export const caseStudyInfo = [
     `
   },
   {
-    title: "AI-Powered GIS Fibre Rollout Solution",
+    title: "AI GIS Fibre Rollout Solution",
     industry: "Infrastructure",
     description: "Created an intelligent GIS-based system powered by AI to optimize fibre network planning and deployment, automating route selection and reducing planning costs by 45%.",
     readMore: "Read Case Study",
     content: `
-      <h2>AI-Powered GIS Fibre Rollout Solution</h2>
+      <h2>AI GIS Fibre Rollout Solution</h2>
       
       <p>A national infrastructure provider embarking on an ambitious fibre broadband rollout needed to optimize planning and deployment across diverse geographical areas.</p>
       
@@ -206,7 +206,7 @@ export const caseStudyInfo = [
       
       <h3>Our Solution</h3>
       
-      <p>We developed an AI-powered GIS solution:</p>
+      <p>We developed an AI GIS solution:</p>
       <ul>
         <li>Integrated multiple data sources including terrain, existing infrastructure, and population density</li>
         <li>Implemented machine learning algorithms to optimize route planning</li>
@@ -217,7 +217,7 @@ export const caseStudyInfo = [
       
       <h3>Results</h3>
       
-      <p>The AI-powered solution transformed their fibre rollout:</p>
+      <p>The AI solution transformed their fibre rollout:</p>
       <ul>
         <li>45% reduction in planning costs</li>
         <li>38% faster route design and approval</li>

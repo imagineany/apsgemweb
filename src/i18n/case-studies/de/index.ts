@@ -31,9 +31,9 @@ export const caseStudyInfo = [
     mdxPath: ""
   },
   {
-    title: "KI-gestützte GIS-Glasfaserausbaulösung",
+    title: "KI-GIS-Glasfaserausbaulösung",
     industry: "Infrastruktur",
-    description: "Erstellung eines intelligenten GIS-basierten Systems, das durch KI unterstützt wird, um die Planung und Bereitstellung von Glasfasernetzen zu optimieren, die Routenauswahl zu automatisieren und die Planungskosten um 45% zu reduzieren.",
+    description: "Erstellung eines intelligenten GIS-basierten Systems mit KI, um die Planung und Bereitstellung von Glasfasernetzen zu optimieren, die Routenauswahl zu automatisieren und die Planungskosten um 45% zu reduzieren.",
     readMore: "Fallstudie lesen",
     mdxPath: ""
   },

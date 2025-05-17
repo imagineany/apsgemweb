@@ -14,11 +14,11 @@ export const deTranslations = {
   hero: {
     title: "KI-Lösungen für Ihre spezifischen geschäftlichen Herausforderungen",
     subtitle: "Wir entwickeln maßgeschneiderte Software und intelligente Workflows, die messbare Ergebnisse liefern.",
-    cta: "Besprechen Sie Ihre spezifische Herausforderung"
+    cta: "Sprechen Sie mit uns"
   },
   services: {
     title: "Geschäftslösungen auf Ihre Bedürfnisse zugeschnitten",
-    subtitle: "Wir adressieren Ihre spezifischen Herausforderungen mit KI-gestützten Lösungen",
+    subtitle: "Wir adressieren Ihre spezifischen Herausforderungen mit KI-Lösungen",
     items: [
       {
         title: "Ihre Unternehmensentwicklung",
@@ -144,7 +144,7 @@ export const deTranslations = {
     emailAddress: "kontakt@techprecision.de",
     scheduleCall: "Termin vereinbaren",
     bookConsultation: "30-minütige Beratung buchen",
-    scheduleButton: "Vereinbaren Sie Ihre Beratung"
+    scheduleButton: "Termin vereinbaren"
   },
   footer: {
     copyright: "© 2025 TechPrecision GmbH. Alle Rechte vorbehalten.",

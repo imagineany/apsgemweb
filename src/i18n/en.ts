@@ -14,11 +14,11 @@ export const enTranslations = {
   hero: {
     title: "AI Solutions for your specific Business Challenges",
     subtitle: "We build custom software and intelligent workflows that deliver measurable outcomes.",
-    cta: "Discuss Your Specific Challenge"
+    cta: "Talk to Us"
   },
   services: {
     title: "Business Solutions Tailored to Your Needs",
-    subtitle: "Addressing your specific challenges with AI-powered solutions",
+    subtitle: "Addressing your specific challenges with AI solutions",
     items: [
       {
         title: "Your Enterprise Development",
@@ -144,7 +144,7 @@ export const enTranslations = {
     emailAddress: "contact@techprecision.de",
     scheduleCall: "Schedule a Call",
     bookConsultation: "Book a 30-minute consultation",
-    scheduleButton: "Schedule Your Consultation"
+    scheduleButton: "Schedule a Call"
   },
   footer: {
     copyright: "© 2025 TechPrecision GmbH. All rights reserved.",
