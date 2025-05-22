@@ -7,7 +7,7 @@ export const caseStudyInfo = {
   industry: "Retail",
   description: "Developed a tailored ERP system that integrated all business processes and increased operational efficiency by 25%.",
   readMore: "Read Case Study",
-  imageUrl: "/images/retail-chain-erp-solution.png",
+  imageUrl: "/media/retail-chain-erp-solution.png",
   tags: ["Retail", "ERP", "Business Intelligence", "Inventory Management"]
 };
 

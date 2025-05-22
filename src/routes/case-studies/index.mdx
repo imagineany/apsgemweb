@@ -5,6 +5,7 @@ title: Case Studies
 import { component$ } from '@builder.io/qwik';
 import { Link } from '@builder.io/qwik-city';
 import './case-studies.css';
+import { ImageWrapper } from '~/components/core/ImageWrapper';
 
 # Case Studies
 
@@ -14,17 +15,76 @@ At TechPräzision, we take pride in our successful partnerships with leading ent
 
 <div class="case-studies-grid">
   <div class="case-study-card">
+    <div class="case-study-image">
+      <ImageWrapper src="/media/digital-manufacturing-transformation.png" alt="Digital Manufacturing Transformation" width={300} height={150} />
+    </div>
+    <div class="case-study-industry">
+      <span>Manufacturing</span>
+    </div>
     <h3>Digital Manufacturing Transformation</h3>
     <p>Implemented an integrated digital platform that streamlined operations and reduced costs by 35%.</p>
     <Link href="/case-studies/manufacturing-transformation/">Read Case Study</Link>
   </div>
   
   <div class="case-study-card">
+    <div class="case-study-image">
+      <ImageWrapper src="/media/financial-services-cloud-migration.png" alt="Financial Services Cloud Migration" width={300} height={150} />
+    </div>
+    <div class="case-study-industry">
+      <span>Financial Services</span>
+    </div>
     <h3>Financial Services Cloud Migration</h3>
     <p>Modernized legacy infrastructure with a secure cloud solution, reducing costs by 40% and improving availability to 99.99%.</p>
     <Link href="/case-studies/financial-services/">Read Case Study</Link>
   </div>
   
+  <div class="case-study-card">
+    <div class="case-study-image">
+      <ImageWrapper src="/media/retail-chain-erp-solution.png" alt="Retail Chain ERP Solution" width={300} height={150} />
+    </div>
+    <div class="case-study-industry">
+      <span>Retail</span>
+    </div>
+    <h3>Custom ERP Solution for Retail Chain</h3>
+    <p>Developed a tailored ERP system that integrated all business processes and increased operational efficiency by 25%.</p>
+    <Link href="/case-studies/retail-chain-erp/">Read Case Study</Link>
+  </div>
+  
+  <div class="case-study-card">
+    <div class="case-study-image">
+      <ImageWrapper src="/media/5g-equipment-vendor-swap.png" alt="5G Equipment Vendor Swap" width={300} height={150} />
+    </div>
+    <div class="case-study-industry">
+      <span>Telecommunications</span>
+    </div>
+    <h3>5G Equipment Vendor Swap Platform</h3>
+    <p>Developed a B2B real-time data exchange platform between a mobile operator and equipment vendor, enabling automated 5G site configuration and deployment, reducing rollout time by 60%.</p>
+    <Link href="/case-studies/telecom-vendor-swap/">Read Case Study</Link>
+  </div>
+  
+  <div class="case-study-card">
+    <div class="case-study-image">
+      <ImageWrapper src="/media/ai-gis-fibre-rollout.png" alt="AI GIS Fibre Rollout" width={300} height={150} />
+    </div>
+    <div class="case-study-industry">
+      <span>Infrastructure</span>
+    </div>
+    <h3>AI GIS Fibre Rollout Solution</h3>
+    <p>Created an intelligent GIS-based system powered by AI to optimize fibre network planning and deployment, automating route selection and reducing planning costs by 45%.</p>
+    <Link href="/case-studies/ai-gis-fibre-rollout/">Read Case Study</Link>
+  </div>
+  
+  <div class="case-study-card">
+    <div class="case-study-image">
+      <ImageWrapper src="/media/mcp-agentic-ai-marketplace.png" alt="Agentic AI Marketplace" width={300} height={150} />
+    </div>
+    <div class="case-study-industry">
+      <span>Artificial Intelligence / Blockchain</span>
+    </div>
+    <h3>Agentic AI Solution for Decentralized Task Marketplace</h3>
+    <p>Implemented an MCP protocol integration enabling LLMs to operate autonomously on a decentralized task marketplace, reducing task completion time by 70% and increasing transaction volume.</p>
+    <Link href="/case-studies/agentic-ai-marketplace/">Read Case Study</Link>
+  </div>
 </div>
 
 <div class="back-link">

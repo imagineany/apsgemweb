@@ -7,7 +7,7 @@ export const caseStudyInfo = {
   industry: "Fertigung",
   description: "Implementierung einer integrierten digitalen Plattform, die Abläufe optimierte und Kosten um 35% reduzierte.",
   readMore: "Fallstudie lesen",
-  imageUrl: "/images/digital-manufacturing-transformation.png",
+  imageUrl: "/media/digital-manufacturing-transformation.png",
   tags: ["Fertigung", "Digitale Transformation", "IoT", "Industrie 4.0"]
 };
 

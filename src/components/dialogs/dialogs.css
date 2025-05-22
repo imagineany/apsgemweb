@@ -106,7 +106,7 @@
 .case-study-image {
   float: right;
   width: 40%;
-  max-width: 300px;
+  max-width: 400px;
   margin: 0 0 1.5rem 2rem;
   overflow: hidden;
   border-radius: 10px;
@@ -116,8 +116,8 @@
 .case-study-image img {
   width: 100%;
   display: block;
-  object-fit: cover;
-  max-height: 250px;
+  object-fit: contain;
+  height: auto;
 }
 
 .case-study-industry {

@@ -5,6 +5,7 @@ title: Fallstudien
 import { component$ } from '@builder.io/qwik';
 import { Link } from '@builder.io/qwik-city';
 import '../../case-studies/case-studies.css';
+import { ImageWrapper } from '~/components/core/ImageWrapper';
 
 # Fallstudien
 
@@ -14,17 +15,76 @@ Bei TechPräzision sind wir stolz auf unsere erfolgreichen Partnerschaften mit f
 
 <div class="case-studies-grid">
   <div class="case-study-card">
+    <div class="case-study-image">
+      <ImageWrapper src="/media/digital-manufacturing-transformation.png" alt="Digitale Transformation in der Fertigung" width={300} height={150} />
+    </div>
+    <div class="case-study-industry">
+      <span>Fertigung</span>
+    </div>
     <h3>Digitale Transformation in der Fertigung</h3>
     <p>Implementierung einer integrierten digitalen Plattform, die Betriebsabläufe optimierte und Kosten um 35% reduzierte.</p>
     <Link href="/de/case-studies/manufacturing-transformation/">Fallstudie lesen</Link>
   </div>
   
   <div class="case-study-card">
+    <div class="case-study-image">
+      <ImageWrapper src="/media/financial-services-cloud-migration.png" alt="Cloud-Migration für Finanzdienstleistungen" width={300} height={150} />
+    </div>
+    <div class="case-study-industry">
+      <span>Finanzdienstleistungen</span>
+    </div>
     <h3>Cloud-Migration für Finanzdienstleistungen</h3>
     <p>Modernisierung der Legacy-Infrastruktur mit einer sicheren Cloud-Lösung, die Kosten um 40% reduzierte und die Verfügbarkeit auf 99,99% verbesserte.</p>
     <Link href="/de/case-studies/financial-services/">Fallstudie lesen</Link>
   </div>
   
+  <div class="case-study-card">
+    <div class="case-study-image">
+      <ImageWrapper src="/media/retail-chain-erp-solution.png" alt="Maßgeschneiderte ERP-Lösung für Einzelhandelskette" width={300} height={150} />
+    </div>
+    <div class="case-study-industry">
+      <span>Einzelhandel</span>
+    </div>
+    <h3>Maßgeschneiderte ERP-Lösung für Einzelhandelskette</h3>
+    <p>Entwicklung eines maßgeschneiderten ERP-Systems, das alle Geschäftsprozesse integrierte und die Betriebseffizienz um 25% steigerte.</p>
+    <Link href="/de/case-studies/retail-chain-erp/">Fallstudie lesen</Link>
+  </div>
+  
+  <div class="case-study-card">
+    <div class="case-study-image">
+      <ImageWrapper src="/media/5g-equipment-vendor-swap.png" alt="5G-Gerätelieferantenwechsel-Plattform" width={300} height={150} />
+    </div>
+    <div class="case-study-industry">
+      <span>Telekommunikation</span>
+    </div>
+    <h3>5G-Gerätelieferantenwechsel-Plattform</h3>
+    <p>Entwicklung einer B2B-Plattform für den Echtzeit-Datenaustausch zwischen einem Mobilfunkbetreiber und Gerätelieferanten, die eine automatisierte 5G-Standortkonfiguration und -bereitstellung ermöglicht und die Einführungszeit um 60% reduziert.</p>
+    <Link href="/de/case-studies/telecom-vendor-swap/">Fallstudie lesen</Link>
+  </div>
+  
+  <div class="case-study-card">
+    <div class="case-study-image">
+      <ImageWrapper src="/media/ai-gis-fibre-rollout.png" alt="KI-GIS-Glasfaserausbaulösung" width={300} height={150} />
+    </div>
+    <div class="case-study-industry">
+      <span>Infrastruktur</span>
+    </div>
+    <h3>KI-GIS-Glasfaserausbaulösung</h3>
+    <p>Erstellung eines intelligenten GIS-basierten Systems mit KI, um die Planung und Bereitstellung von Glasfasernetzen zu optimieren, die Routenauswahl zu automatisieren und die Planungskosten um 45% zu reduzieren.</p>
+    <Link href="/de/case-studies/ai-gis-fibre-rollout/">Fallstudie lesen</Link>
+  </div>
+  
+  <div class="case-study-card">
+    <div class="case-study-image">
+      <ImageWrapper src="/media/mcp-agentic-ai-marketplace.png" alt="Agentische KI-Lösung für dezentralen Aufgabenmarktplatz" width={300} height={150} />
+    </div>
+    <div class="case-study-industry">
+      <span>Künstliche Intelligenz / Blockchain</span>
+    </div>
+    <h3>Agentische KI-Lösung für dezentralen Aufgabenmarktplatz</h3>
+    <p>Implementierung einer MCP-Protokollintegration, die es LLMs ermöglicht, autonom auf einem dezentralen Aufgabenmarktplatz zu operieren, wodurch die Aufgabenerledigungszeit um 70% reduziert und das Transaktionsvolumen erhöht wurde.</p>
+    <Link href="/de/case-studies/agentic-ai-marketplace/">Fallstudie lesen</Link>
+  </div>
 </div>
 
 <div class="back-link">

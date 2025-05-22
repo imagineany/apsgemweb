@@ -1,6 +1,6 @@
 import { component$, useStylesScoped$, useContext, useStore, useVisibleTask$, useSignal } from '@builder.io/qwik';
 import { useTranslation, LanguageContext } from '../../i18n/i18n';
-import { Link } from '@builder.io/qwik-city';
+// import { Link } from '@builder.io/qwik-city'; // Commented out as not currently used
 import sectionsStyles from './sections.css?inline';
 import { MatArrowForwardOutlined } from '@qwikest/icons/material';
 import { CaseStudyDialog } from '../dialogs/CaseStudyDialog';
@@ -67,10 +67,10 @@ export const CaseStudiesSection = component$(() => {
     ? enCaseStudyInfo 
     : deCaseStudyInfo;
     
-  // Get the base URL for case studies based on language
-  const baseUrl = languageContext.lang === 'en' 
-    ? '/case-studies/' 
-    : '/de/case-studies/';
+  // Base URL commented out as it's not currently used
+  // const baseUrl = languageContext.lang === 'en' 
+  //   ? '/case-studies/' 
+  //   : '/de/case-studies/';
 
   return (
     <section id="case-studies" class="section case-studies-section">
@@ -107,11 +107,13 @@ export const CaseStudiesSection = component$(() => {
           ))}
         </div>
         
+        {/* View All Case Studies link hidden as requested
         <div class="view-all-container">
           <Link href={`${baseUrl}`} class="button button-secondary">
             {t('caseStudies.viewAll')}
           </Link>
         </div>
+        */}
       </div>
       
       {/* Case Study Dialog */}

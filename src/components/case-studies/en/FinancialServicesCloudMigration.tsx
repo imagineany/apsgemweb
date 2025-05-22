@@ -7,7 +7,7 @@ export const caseStudyInfo = {
   industry: "Financial Services",
   description: "Modernized legacy infrastructure with a secure cloud solution, reducing costs by 40% and improving availability to 99.99%.",
   readMore: "Read Case Study",
-  imageUrl: "/images/financial-services-cloud-migration.png",
+  imageUrl: "/media/financial-services-cloud-migration.png",
   tags: ["Financial Services", "Cloud Migration", "AWS", "Security"]
 };
 

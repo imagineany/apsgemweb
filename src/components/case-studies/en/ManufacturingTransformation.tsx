@@ -7,7 +7,7 @@ export const caseStudyInfo = {
   industry: "Manufacturing",
   description: "Implemented an integrated digital platform that streamlined operations and reduced costs by 35%.",
   readMore: "Read Case Study",
-  imageUrl: "/images/digital-manufacturing-transformation.png",
+  imageUrl: "/media/digital-manufacturing-transformation.png",
   tags: ["Manufacturing", "Digital Transformation", "IoT", "Industry 4.0"]
 };
 

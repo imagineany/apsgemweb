@@ -2,6 +2,7 @@ import { component$, useStylesScoped$, PropFunction, useSignal, useVisibleTask$,
 import { MatCloseOutlined } from '@qwikest/icons/material';
 import { useLocation } from '@builder.io/qwik-city';
 import { getLanguageFromPath, Language } from '../../i18n/i18n';
+import { OptimizedImage } from '../core/OptimizedImage';
 
 // Import case study components directly
 import { caseStudies as enCaseStudies, caseStudyComponents as enCaseStudyComponents } from '../case-studies/en';
@@ -103,7 +104,7 @@ export const CaseStudyDialog = component$<CaseStudyDialogProps>((props) => {
           </div>
           
           <div class="case-study-image">
-            <img src={imageUrl.value} alt={title.value} />
+            <OptimizedImage src={imageUrl.value} alt={title.value} />
           </div>
           
           {CaseStudyComponent.value ? (

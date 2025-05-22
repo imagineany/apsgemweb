@@ -1,5 +1,23 @@
 import { component$ } from '@builder.io/qwik';
 
+// Import case study images directly
+import DigitalManufacturingImage from '~/media/digital-manufacturing-transformation.png?w=800&h=400&format=webp&jsx';
+import FinancialServicesImage from '~/media/financial-services-cloud-migration.png?w=800&h=400&format=webp&jsx';
+import RetailChainImage from '~/media/retail-chain-erp-solution.png?w=800&h=400&format=webp&jsx';
+import EquipmentVendorImage from '~/media/5g-equipment-vendor-swap.png?w=800&h=400&format=webp&jsx';
+import FibreRolloutImage from '~/media/ai-gis-fibre-rollout.png?w=800&h=400&format=webp&jsx';
+import McpAgenticImage from '~/media/mcp-agentic-ai-marketplace.png?w=800&h=400&format=webp&jsx';
+
+// Image component mapping
+const imageComponents: Record<string, any> = {
+  "/media/digital-manufacturing-transformation.png": DigitalManufacturingImage,
+  "/media/financial-services-cloud-migration.png": FinancialServicesImage,
+  "/media/retail-chain-erp-solution.png": RetailChainImage,
+  "/media/5g-equipment-vendor-swap.png": EquipmentVendorImage,
+  "/media/ai-gis-fibre-rollout.png": FibreRolloutImage,
+  "/media/mcp-agentic-ai-marketplace.png": McpAgenticImage
+};
+
 interface OptimizedImageProps {
   src: string;
   alt: string;
@@ -17,6 +35,13 @@ export const OptimizedImage = component$<OptimizedImageProps>(({
   class: className, 
   style 
 }) => {
+  // Check if the image is one of our pre-imported case study images
+  const ImageComponent = imageComponents[src];
+  
+  if (ImageComponent) {
+    return <ImageComponent alt={alt} />;
+  }
+  
   // For images in the public directory, we need to use them as is
   const isPublicImage = src.startsWith('/');
   
