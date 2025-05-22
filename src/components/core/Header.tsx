@@ -19,7 +19,7 @@ export const Header = component$(() => {
         <div class="header-content">
           <div class="logo">
             <Link href="/">
-              <span class="logo-text">TechPrecision</span>
+              <img src="/logo.png" alt="TechPrecision Logo" class="logo-image" />
             </Link>
           </div>
 
