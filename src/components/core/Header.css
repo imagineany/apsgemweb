@@ -21,10 +21,38 @@
   align-items: center;
 }
 
+.logo a {
+  display: flex;
+  text-decoration: none;
+}
+
+.logo-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  white-space: nowrap;
+  flex-wrap: nowrap; /* Ensure no wrapping */
+}
+
 .logo-image {
   height: 40px;
   width: auto;
   display: block;
+  margin-right: 10px;
+  flex-shrink: 0; /* Prevent image from shrinking */
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  font-family: var(--logo-font-family);
+  letter-spacing: -0.02em;
+  line-height: 1;
+  white-space: nowrap; /* Prevent text wrapping */
 }
 
 .main-nav ul {
@@ -163,5 +191,14 @@
   html[lang="de"] .language-toggle .language-button {
     padding: 4px 8px;
     font-size: 0.9rem;
+  }
+  
+  /* Ensure logo and text stay on the same line on small screens */
+  .logo a {
+    flex-wrap: nowrap;
+  }
+  
+  .logo-text {
+    font-size: 1.2rem; /* Slightly smaller font on mobile */
   }
 }

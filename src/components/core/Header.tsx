@@ -5,6 +5,7 @@ import { ThemeToggle } from './ThemeToggle';
 import { useTranslation, LanguageContext } from '../../i18n/i18n';
 import { MatMenuOutlined, MatCloseOutlined } from '@qwikest/icons/material';
 import headerStyles from './Header.css?inline';
+import { company } from '../../config';
 
 export const Header = component$(() => {
   useStylesScoped$(headerStyles);
@@ -19,7 +20,10 @@ export const Header = component$(() => {
         <div class="header-content">
           <div class="logo">
             <Link href="/">
-              <img src="/logo.png" alt="TechPrecision Logo" class="logo-image" />
+              <div class="logo-container">
+                <img src="/logo.png" alt={`${company.name} Logo`} class="logo-image" />
+                <span class="logo-text">{company.name}</span>
+              </div>
             </Link>
           </div>
 
