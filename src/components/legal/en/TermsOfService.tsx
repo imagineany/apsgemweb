@@ -1,5 +1,7 @@
 import { component$, useStylesScoped$ } from '@builder.io/qwik';
 import styles from '../legal.css?inline';
+import { company, contact } from '~/config';
+import { ObfuscatedEmail } from '~/components/core/ObfuscatedEmail';
 
 export const legalInfo = {
   id: "terms-of-service",
@@ -9,6 +11,13 @@ export const legalInfo = {
 
 export const TermsOfService = component$(() => {
   useStylesScoped$(styles);
+  
+  // Display options - these will be configurable from config
+  const displayOptions = {
+    phone: contact.display?.phone !== false,
+    email: contact.display?.email !== false,
+    address: contact.display?.address !== false,
+  };
   return (
     <div class="legal-content">
       <h1>Terms of Service</h1>
@@ -16,7 +25,7 @@ export const TermsOfService = component$(() => {
       
       <div class="section">
         <h2>Introduction</h2>
-        <p>Welcome to {'{company.name}'}. These Terms of Service ("Terms") govern your use of our website and services. By accessing or using our website, you agree to be bound by these Terms. If you disagree with any part of the Terms, you may not access our website or use our services.</p>
+        <p>Welcome to {company.name}. These Terms of Service ("Terms") govern your use of our website and services. By accessing or using our website, you agree to be bound by these Terms. If you disagree with any part of the Terms, you may not access our website or use our services.</p>
       </div>
       
       <div class="section">
@@ -33,7 +42,7 @@ export const TermsOfService = component$(() => {
       
       <div class="section">
         <h2>Intellectual Property</h2>
-        <p>The content on our website, including but not limited to text, graphics, logos, images, and software, is the property of {'{company.name}'} and is protected by copyright and other intellectual property laws. You may not reproduce, distribute, modify, create derivative works of, publicly display, publicly perform, republish, download, store, or transmit any of the material on our website without our prior written consent.</p>
+        <p>The content on our website, including but not limited to text, graphics, logos, images, and software, is the property of {company.name} and is protected by copyright and other intellectual property laws. You may not reproduce, distribute, modify, create derivative works of, publicly display, publicly perform, republish, download, store, or transmit any of the material on our website without our prior written consent.</p>
       </div>
       
       <div class="section">
@@ -48,7 +57,7 @@ export const TermsOfService = component$(() => {
       
       <div class="section">
         <h2>Limitation of Liability</h2>
-        <p>To the maximum extent permitted by law, {'{company.name}'} shall not be liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of profits or revenues, whether incurred directly or indirectly, or any loss of data, use, goodwill, or other intangible losses resulting from your use of our services.</p>
+        <p>To the maximum extent permitted by law, {company.name} shall not be liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of profits or revenues, whether incurred directly or indirectly, or any loss of data, use, goodwill, or other intangible losses resulting from your use of our services.</p>
       </div>
       
       <div class="region-specific">
@@ -63,7 +72,7 @@ export const TermsOfService = component$(() => {
       
       <div class="section">
         <h2>Indemnification</h2>
-        <p>You agree to indemnify and hold {'{company.name}'} and its affiliates, officers, agents, and employees harmless from any claim or demand, including reasonable attorneys' fees, made by any third party due to or arising out of your breach of these Terms or your violation of any law or the rights of a third party.</p>
+        <p>You agree to indemnify and hold {company.name} and its affiliates, officers, agents, and employees harmless from any claim or demand, including reasonable attorneys' fees, made by any third party due to or arising out of your breach of these Terms or your violation of any law or the rights of a third party.</p>
       </div>
       
       <div class="section">
@@ -79,9 +88,15 @@ export const TermsOfService = component$(() => {
       <div class="section">
         <h2>Contact Us</h2>
         <p>If you have any questions about these Terms, please contact us at:</p>
-        <p>Email: {'{contact.email}'}</p>
-        <p>Phone: {'{contact.phone}'}</p>
-        <p>Address: {'{contact.address.street}, {contact.address.city}, {contact.address.postalCode}, {contact.address.country}'}</p>
+        {displayOptions.email && (
+          <p>Email: <ObfuscatedEmail email={contact.email} showAsLink={false} /></p>
+        )}
+        {displayOptions.phone && (
+          <p>Phone: {contact.phone}</p>
+        )}
+        {displayOptions.address && (
+          <p>Address: {`${contact.address.street}, ${contact.address.city}, ${contact.address.postalCode}, ${contact.address.country}`}</p>
+        )}
       </div>
       
       <p class="effective-date">These Terms of Service are effective as of {legalInfo.lastUpdated}.</p>

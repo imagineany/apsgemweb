@@ -1,5 +1,7 @@
 import { component$, useStylesScoped$ } from '@builder.io/qwik';
 import styles from '../legal.css?inline';
+import { company, contact } from '~/config';
+import { ObfuscatedEmail } from '~/components/core/ObfuscatedEmail';
 
 export const legalInfo = {
   id: "privacy-policy",
@@ -9,6 +11,13 @@ export const legalInfo = {
 
 export const PrivacyPolicy = component$(() => {
   useStylesScoped$(styles);
+  
+  // Display options - these will be configurable from config
+  const displayOptions = {
+    phone: contact.display?.phone !== false,
+    email: contact.display?.email !== false,
+    address: contact.display?.address !== false,
+  };
   return (
     <div class="legal-content">
       <h1>Privacy Policy</h1>
@@ -16,7 +25,7 @@ export const PrivacyPolicy = component$(() => {
       
       <div class="section">
         <h2>Introduction</h2>
-        <p>At {'{company.name}'}, we respect your privacy and are committed to protecting your personal data. This privacy policy will inform you about how we look after your personal data when you visit our website and tell you about your privacy rights and how the law protects you.</p>
+        <p>At {company.name}, we respect your privacy and are committed to protecting your personal data. This privacy policy will inform you about how we look after your personal data when you visit our website and tell you about your privacy rights and how the law protects you.</p>
         <p>This privacy policy applies to personal data we collect from you when you visit our website, contact us, or use our services.</p>
       </div>
       
@@ -87,9 +96,15 @@ export const PrivacyPolicy = component$(() => {
       <div class="section">
         <h2>Contact Us</h2>
         <p>If you have any questions about this privacy policy or our privacy practices, please contact us at:</p>
-        <p>Email: {'{contact.email}'}</p>
-        <p>Phone: {'{contact.phone}'}</p>
-        <p>Address: {'{contact.address.street}, {contact.address.city}, {contact.address.postalCode}, {contact.address.country}'}</p>
+        {displayOptions.email && (
+          <p>Email: <ObfuscatedEmail email={contact.email} showAsLink={false} /></p>
+        )}
+        {displayOptions.phone && (
+          <p>Phone: {contact.phone}</p>
+        )}
+        {displayOptions.address && (
+          <p>Address: {`${contact.address.street}, ${contact.address.city}, ${contact.address.postalCode}, ${contact.address.country}`}</p>
+        )}
       </div>
       
       <p class="effective-date">This Privacy Policy is effective as of {legalInfo.lastUpdated}.</p>

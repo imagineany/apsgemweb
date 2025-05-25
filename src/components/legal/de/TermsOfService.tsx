@@ -1,5 +1,7 @@
 import { component$, useStylesScoped$ } from '@builder.io/qwik';
 import styles from '../legal.css?inline';
+import { company, contact } from '~/config';
+import { ObfuscatedEmail } from '~/components/core/ObfuscatedEmail';
 
 export const legalInfo = {
   id: "terms-of-service",
@@ -9,6 +11,13 @@ export const legalInfo = {
 
 export const TermsOfService = component$(() => {
   useStylesScoped$(styles);
+  
+  // Display options - these will be configurable from config
+  const displayOptions = {
+    phone: contact.display?.phone !== false,
+    email: contact.display?.email !== false,
+    address: contact.display?.address !== false,
+  };
   return (
     <div class="legal-content">
       <h1>Nutzungsbedingungen</h1>
@@ -16,7 +25,7 @@ export const TermsOfService = component$(() => {
       
       <div class="section">
         <h2>Einleitung</h2>
-        <p>Willkommen bei {'{company.name}'}. Diese Nutzungsbedingungen ("Bedingungen") regeln Ihre Nutzung unserer Website und Dienstleistungen. Durch den Zugriff auf oder die Nutzung unserer Website erklären Sie sich mit diesen Bedingungen einverstanden. Wenn Sie mit einem Teil der Bedingungen nicht einverstanden sind, dürfen Sie nicht auf unsere Website zugreifen oder unsere Dienstleistungen nutzen.</p>
+        <p>Willkommen bei {company.name}. Diese Nutzungsbedingungen ("Bedingungen") regeln Ihre Nutzung unserer Website und Dienstleistungen. Durch den Zugriff auf oder die Nutzung unserer Website erklären Sie sich mit diesen Bedingungen einverstanden. Wenn Sie mit einem Teil der Bedingungen nicht einverstanden sind, dürfen Sie nicht auf unsere Website zugreifen oder unsere Dienstleistungen nutzen.</p>
       </div>
       
       <div class="section">
@@ -33,7 +42,7 @@ export const TermsOfService = component$(() => {
       
       <div class="section">
         <h2>Geistiges Eigentum</h2>
-        <p>Der Inhalt auf unserer Website, einschließlich, aber nicht beschränkt auf Text, Grafiken, Logos, Bilder und Software, ist Eigentum von {'{company.name}'} und durch Urheberrechte und andere Gesetze zum Schutz des geistigen Eigentums geschützt. Sie dürfen keines der Materialien auf unserer Website ohne unsere vorherige schriftliche Zustimmung reproduzieren, verteilen, modifizieren, abgeleitete Werke erstellen, öffentlich anzeigen, öffentlich aufführen, neu veröffentlichen, herunterladen, speichern oder übertragen.</p>
+        <p>Der Inhalt auf unserer Website, einschließlich, aber nicht beschränkt auf Text, Grafiken, Logos, Bilder und Software, ist Eigentum von {company.name} und durch Urheberrechte und andere Gesetze zum Schutz des geistigen Eigentums geschützt. Sie dürfen keines der Materialien auf unserer Website ohne unsere vorherige schriftliche Zustimmung reproduzieren, verteilen, modifizieren, abgeleitete Werke erstellen, öffentlich anzeigen, öffentlich aufführen, neu veröffentlichen, herunterladen, speichern oder übertragen.</p>
       </div>
       
       <div class="section">
@@ -48,7 +57,7 @@ export const TermsOfService = component$(() => {
       
       <div class="section">
         <h2>Haftungsbeschränkung</h2>
-        <p>Soweit gesetzlich zulässig, haftet {'{company.name}'} nicht für indirekte, zufällige, besondere, Folge- oder Strafschäden oder für entgangene Gewinne oder Einnahmen, ob direkt oder indirekt entstanden, oder für Verluste von Daten, Nutzung, Goodwill oder andere immaterielle Verluste, die aus Ihrer Nutzung unserer Dienstleistungen resultieren.</p>
+        <p>Soweit gesetzlich zulässig, haftet {company.name} nicht für indirekte, zufällige, besondere, Folge- oder Strafschäden oder für entgangene Gewinne oder Einnahmen, ob direkt oder indirekt entstanden, oder für Verluste von Daten, Nutzung, Goodwill oder andere immaterielle Verluste, die aus Ihrer Nutzung unserer Dienstleistungen resultieren.</p>
       </div>
       
       <div class="region-specific">
@@ -63,7 +72,7 @@ export const TermsOfService = component$(() => {
       
       <div class="section">
         <h2>Entschädigung</h2>
-        <p>Sie stimmen zu, {'{company.name}'} und seine verbundenen Unternehmen, leitenden Angestellten, Vertreter und Mitarbeiter von jeglichen Ansprüchen oder Forderungen, einschließlich angemessener Anwaltsgebühren, freizustellen und schadlos zu halten, die von Dritten aufgrund Ihrer Verletzung dieser Bedingungen oder Ihrer Verletzung von Gesetzen oder Rechten Dritter erhoben werden.</p>
+        <p>Sie stimmen zu, {company.name} und seine verbundenen Unternehmen, leitenden Angestellten, Vertreter und Mitarbeiter von jeglichen Ansprüchen oder Forderungen, einschließlich angemessener Anwaltsgebühren, freizustellen und schadlos zu halten, die von Dritten aufgrund Ihrer Verletzung dieser Bedingungen oder Ihrer Verletzung von Gesetzen oder Rechten Dritter erhoben werden.</p>
       </div>
       
       <div class="section">
@@ -79,9 +88,15 @@ export const TermsOfService = component$(() => {
       <div class="section">
         <h2>Kontaktieren Sie uns</h2>
         <p>Wenn Sie Fragen zu diesen Bedingungen haben, kontaktieren Sie uns bitte unter:</p>
-        <p>E-Mail: {'{contact.email}'}</p>
-        <p>Telefon: {'{contact.phone}'}</p>
-        <p>Adresse: {'{contact.address.street}, {contact.address.city}, {contact.address.postalCode}, {contact.address.country}'}</p>
+        {displayOptions.email && (
+          <p>E-Mail: <ObfuscatedEmail email={contact.email} showAsLink={false} /></p>
+        )}
+        {displayOptions.phone && (
+          <p>Telefon: {contact.phone}</p>
+        )}
+        {displayOptions.address && (
+          <p>Adresse: {`${contact.address.street}, ${contact.address.city}, ${contact.address.postalCode}, ${contact.address.country}`}</p>
+        )}
       </div>
       
       <p class="effective-date">Diese Nutzungsbedingungen sind ab dem {legalInfo.lastUpdated} wirksam.</p>

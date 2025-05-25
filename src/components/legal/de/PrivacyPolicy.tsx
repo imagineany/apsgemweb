@@ -1,5 +1,7 @@
 import { component$, useStylesScoped$ } from '@builder.io/qwik';
 import styles from '../legal.css?inline';
+import { company, contact } from '~/config';
+import { ObfuscatedEmail } from '~/components/core/ObfuscatedEmail';
 
 export const legalInfo = {
   id: "privacy-policy",
@@ -9,6 +11,13 @@ export const legalInfo = {
 
 export const PrivacyPolicy = component$(() => {
   useStylesScoped$(styles);
+  
+  // Display options - these will be configurable from config
+  const displayOptions = {
+    phone: contact.display?.phone !== false,
+    email: contact.display?.email !== false,
+    address: contact.display?.address !== false,
+  };
   return (
     <div class="legal-content">
       <h1>Datenschutzrichtlinie</h1>
@@ -16,7 +25,7 @@ export const PrivacyPolicy = component$(() => {
       
       <div class="section">
         <h2>Einleitung</h2>
-        <p>Bei {'{company.name}'} respektieren wir Ihre Privatsphäre und sind bestrebt, Ihre persönlichen Daten zu schützen. Diese Datenschutzrichtlinie informiert Sie darüber, wie wir mit Ihren persönlichen Daten umgehen, wenn Sie unsere Website besuchen, und informiert Sie über Ihre Datenschutzrechte und darüber, wie das Gesetz Sie schützt.</p>
+        <p>Bei {company.name} respektieren wir Ihre Privatsphäre und sind bestrebt, Ihre persönlichen Daten zu schützen. Diese Datenschutzrichtlinie informiert Sie darüber, wie wir mit Ihren persönlichen Daten umgehen, wenn Sie unsere Website besuchen, und informiert Sie über Ihre Datenschutzrechte und darüber, wie das Gesetz Sie schützt.</p>
         <p>Diese Datenschutzrichtlinie gilt für persönliche Daten, die wir von Ihnen sammeln, wenn Sie unsere Website besuchen, uns kontaktieren oder unsere Dienstleistungen nutzen.</p>
       </div>
       
@@ -87,9 +96,15 @@ export const PrivacyPolicy = component$(() => {
       <div class="section">
         <h2>Kontaktieren Sie uns</h2>
         <p>Wenn Sie Fragen zu dieser Datenschutzrichtlinie oder unseren Datenschutzpraktiken haben, kontaktieren Sie uns bitte unter:</p>
-        <p>E-Mail: {'{contact.email}'}</p>
-        <p>Telefon: {'{contact.phone}'}</p>
-        <p>Adresse: {'{contact.address.street}, {contact.address.city}, {contact.address.postalCode}, {contact.address.country}'}</p>
+        {displayOptions.email && (
+          <p>E-Mail: <ObfuscatedEmail email={contact.email} showAsLink={false} /></p>
+        )}
+        {displayOptions.phone && (
+          <p>Telefon: {contact.phone}</p>
+        )}
+        {displayOptions.address && (
+          <p>Adresse: {`${contact.address.street}, ${contact.address.city}, ${contact.address.postalCode}, ${contact.address.country}`}</p>
+        )}
       </div>
       
       <p class="effective-date">Diese Datenschutzrichtlinie ist ab dem {legalInfo.lastUpdated} wirksam.</p>
