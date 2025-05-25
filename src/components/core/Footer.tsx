@@ -4,6 +4,8 @@ import { enTranslations } from '../../i18n/en';
 import { deTranslations } from '../../i18n/de';
 import { MatLocationOnOutlined, MatPhoneOutlined, MatEmailOutlined } from '@qwikest/icons/material';
 import footerStyles from './Footer.css?inline';
+import { company, contact } from '../../config';
+import { ObfuscatedEmail } from './ObfuscatedEmail';
 
 export const Footer = component$(() => {
   useStylesScoped$(footerStyles);
@@ -16,7 +18,7 @@ export const Footer = component$(() => {
       <div class="container">
         <div class="footer-content">
           <div class="footer-logo">
-            <h3>TechPrecision</h3>
+            <h3>{company.name}</h3>
             <p>{t('meta.description')}</p>
           </div>
 
@@ -44,15 +46,18 @@ export const Footer = component$(() => {
               <ul class="contact-info">
                 <li>
                   <MatLocationOnOutlined />
-                  <span>{t('contact.address')}</span>
+                  <span>{`${contact.address.street}, ${contact.address.city}, ${contact.address.postalCode}, ${contact.address.country}`}</span>
                 </li>
                 <li>
                   <MatPhoneOutlined />
-                  <span>{t('contact.phone')}</span>
+                  <span>{contact.phone}</span>
                 </li>
                 <li>
                   <MatEmailOutlined />
-                  <span>{t('contact.emailAddress')}</span>
+                  <ObfuscatedEmail 
+                    email={contact.email} 
+                    showAsLink={false}
+                  />
                 </li>
               </ul>
             </div>
@@ -60,7 +65,7 @@ export const Footer = component$(() => {
         </div>
 
         <div class="footer-bottom">
-          <p>{t('footer.copyright')}</p>
+          <p>© {new Date().getFullYear()} {company.name}. All rights reserved.</p>
           <div class="footer-legal">
             <a href="#">{t('footer.privacy')}</a>
             <a href="#">{t('footer.terms')}</a>

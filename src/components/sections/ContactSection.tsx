@@ -1,6 +1,8 @@
 import { component$, useStylesScoped$, useContext } from '@builder.io/qwik';
 import { useTranslation, LanguageContext } from '../../i18n/i18n';
 import sectionsStyles from './sections.css?inline';
+import { social, contact } from '../../config';
+import { ObfuscatedEmail } from '../core/ObfuscatedEmail';
 import { 
   MatLocationOnOutlined, 
   MatPhoneOutlined, 
@@ -29,8 +31,8 @@ export const ContactSection = component$(() => {
               <div class="contact-info-text">
                 <h4>{t('nav.contact')}</h4>
                 <p>
-                  <a href={`tel:${t('contact.phone')}`} class="contact-link">
-                    {t('contact.phone')}
+                  <a href={`tel:${contact.phone}`} class="contact-link">
+                    {contact.phone}
                   </a>
                 </p>
               </div>
@@ -43,9 +45,10 @@ export const ContactSection = component$(() => {
               <div class="contact-info-text">
                 <h4>{t('contact.email')}</h4>
                 <p>
-                  <a href={`mailto:${t('contact.emailAddress')}`} class="contact-link">
-                    {t('contact.emailAddress')}
-                  </a>
+                  <ObfuscatedEmail 
+                    email={contact.email} 
+                    class="contact-link"
+                  />
                 </p>
               </div>
             </div>
@@ -57,7 +60,7 @@ export const ContactSection = component$(() => {
               <div class="contact-info-text">
                 <h4>{t('contact.scheduleCall')}</h4>
                 <p>
-                  <a href="https://calendly.com/techprecision/consultation" target="_blank" rel="noopener noreferrer" class="contact-link">
+                  <a href={social.calendly} target="_blank" rel="noopener noreferrer" class="contact-link">
                     {t('contact.bookConsultation')}
                   </a>
                 </p>
@@ -69,13 +72,13 @@ export const ContactSection = component$(() => {
                 <MatLocationOnOutlined />
               </div>
               <div class="contact-info-text">
-                <h4>{t('contact.address').split(',')[0]}</h4>
-                <p>{t('contact.address')}</p>
+                <h4>{contact.address.city}</h4>
+                <p>{`${contact.address.street}, ${contact.address.city}, ${contact.address.postalCode}, ${contact.address.country}`}</p>
               </div>
             </div>
             
             <div class="contact-cta">
-              <a href="https://calendly.com/techprecision/consultation" target="_blank" rel="noopener noreferrer" class="button">
+              <a href={social.calendly} target="_blank" rel="noopener noreferrer" class="button">
                 <MatCalendarMonthOutlined /> {t('contact.scheduleButton')}
               </a>
             </div>

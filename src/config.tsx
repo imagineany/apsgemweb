@@ -16,7 +16,7 @@ export const siteConfig = {
   
   // Contact information
   contact: {
-    email: "info@techprecision.de",
+    email: "contact@appswei.com",
     phone: "+49 (0) 123 456 789",
     address: {
       street: "Technologiepark 10",
@@ -30,7 +30,8 @@ export const siteConfig = {
   social: {
     linkedin: "https://linkedin.com/company/appswei",
     github: "https://github.com/appswei",
-    twitter: "https://twitter.com/appswei"
+    twitter: "https://twitter.com/appswei",
+    calendly: "https://calendly.com/appswei/30min"
   },
   
   // Site metadata
