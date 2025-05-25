@@ -80,9 +80,8 @@ export const Footer = component$(() => {
         <div class="footer-bottom">
           <p>© {new Date().getFullYear()} {company.name}. All rights reserved.</p>
           <div class="footer-legal">
-            <a href="#">{t('footer.privacy')}</a>
-            <a href="#">{t('footer.terms')}</a>
-            <a href="#">{t('footer.imprint')}</a>
+            <a href="/privacy-policy">{t('footer.privacy')}</a>
+            <a href="/terms-of-service">{t('footer.terms')}</a>
           </div>
         </div>
       </div>

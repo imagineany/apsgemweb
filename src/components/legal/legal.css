@@ -1,0 +1,68 @@
+.legal-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  line-height: 1.6;
+}
+
+.legal-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--primary-color);
+}
+
+.legal-content h2 {
+  font-size: 1.8rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+.legal-content h3 {
+  font-size: 1.4rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: var(--primary-color);
+}
+
+.legal-content p {
+  margin-bottom: 1rem;
+}
+
+.legal-content ul, 
+.legal-content ol {
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+.legal-content li {
+  margin-bottom: 0.5rem;
+}
+
+.legal-content .section {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-color, #eaeaea);
+}
+
+.legal-content .section:last-child {
+  border-bottom: none;
+}
+
+.legal-content .effective-date {
+  font-style: italic;
+  margin-top: 2rem;
+  color: var(--text-color-secondary, #666);
+}
+
+.legal-content .region-specific {
+  background-color: var(--background-color-secondary, #f5f5f5);
+  padding: 1rem;
+  border-left: 4px solid var(--primary-color);
+  margin: 1.5rem 0;
+}
+
+.legal-content .region-specific h4 {
+  margin-top: 0;
+  color: var(--primary-color);
+}

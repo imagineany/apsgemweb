@@ -149,8 +149,7 @@ export const deTranslations = {
   footer: {
     copyright: "© 2025 TechPrecision GmbH. Alle Rechte vorbehalten.",
     privacy: "Datenschutzrichtlinie",
-    terms: "Nutzungsbedingungen",
-    imprint: "Impressum"
+    terms: "Nutzungsbedingungen"
   }
 };
 
