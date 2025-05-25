@@ -13,6 +13,13 @@ export const Footer = component$(() => {
   const languageContext = useContext(LanguageContext);
   const { t } = useTranslation(languageContext.lang);
 
+  // Display options - these will be configurable from config
+  const displayOptions = {
+    phone: contact.display?.phone !== false,
+    email: contact.display?.email !== false,
+    address: contact.display?.address !== false,
+  };
+
   return (
     <footer class="footer">
       <div class="container">
@@ -44,21 +51,27 @@ export const Footer = component$(() => {
             <div class="footer-section">
               <h4>{t('nav.contact')}</h4>
               <ul class="contact-info">
-                <li>
-                  <MatLocationOnOutlined />
-                  <span>{`${contact.address.street}, ${contact.address.city}, ${contact.address.postalCode}, ${contact.address.country}`}</span>
-                </li>
-                <li>
-                  <MatPhoneOutlined />
-                  <span>{contact.phone}</span>
-                </li>
-                <li>
-                  <MatEmailOutlined />
-                  <ObfuscatedEmail 
-                    email={contact.email} 
-                    showAsLink={false}
-                  />
-                </li>
+                {displayOptions.address && (
+                  <li>
+                    <MatLocationOnOutlined />
+                    <span>{`${contact.address.street}, ${contact.address.city}, ${contact.address.postalCode}, ${contact.address.country}`}</span>
+                  </li>
+                )}
+                {displayOptions.phone && (
+                  <li>
+                    <MatPhoneOutlined />
+                    <span>{contact.phone}</span>
+                  </li>
+                )}
+                {displayOptions.email && (
+                  <li>
+                    <MatEmailOutlined />
+                    <ObfuscatedEmail 
+                      email={contact.email} 
+                      showAsLink={false}
+                    />
+                  </li>
+                )}
               </ul>
             </div>
           </div>

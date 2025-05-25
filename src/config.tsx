@@ -16,6 +16,11 @@ export const siteConfig = {
   
   // Contact information
   contact: {
+    display: {
+      phone: false,
+      email: true,
+      address: false
+    },
     email: "contact@appswei.com",
     phone: "+49 (0) 123 456 789",
     address: {
@@ -28,7 +33,10 @@ export const siteConfig = {
   
   // Social media
   social: {
-    linkedin: "https://linkedin.com/company/appswei",
+    display:{
+      calendly: true
+    },
+    linkedin: "https://calendly.com/contact-appswei/30min",
     github: "https://github.com/appswei",
     twitter: "https://twitter.com/appswei",
     calendly: "https://calendly.com/appswei/30min"
