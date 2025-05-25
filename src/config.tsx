@@ -36,10 +36,10 @@ export const siteConfig = {
     display:{
       calendly: true
     },
-    linkedin: "https://calendly.com/contact-appswei/30min",
+    linkedin: "https://linkedin.com/company/appswei",
     github: "https://github.com/appswei",
     twitter: "https://twitter.com/appswei",
-    calendly: "https://calendly.com/appswei/30min"
+    calendly: "https://calendly.com/contact-appswei/30min"
   },
   
   // Site metadata
