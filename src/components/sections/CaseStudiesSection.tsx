@@ -12,6 +12,7 @@ import RetailChainImage from '~/media/retail-chain-erp-solution.png?w=400&h=200&
 import EquipmentVendorImage from '~/media/5g-equipment-vendor-swap.png?w=400&h=200&format=webp&jsx';
 import FibreRolloutImage from '~/media/ai-gis-fibre-rollout.png?w=400&h=200&format=webp&jsx';
 import McpAgenticImage from '~/media/mcp-agentic-ai-marketplace.png?w=400&h=200&format=webp&jsx';
+import OffshoreSCADAImage from '~/media/offshore-scada-system.png?w=400&h=200&format=webp&jsx';
 
 // Import case study data
 import { caseStudyInfo as enCaseStudyInfo } from '../../i18n/case-studies/en';
@@ -88,6 +89,7 @@ export const CaseStudiesSection = component$(() => {
                 {index === 3 && <EquipmentVendorImage />}
                 {index === 4 && <FibreRolloutImage />}
                 {index === 5 && <McpAgenticImage />}
+                {index === 6 && <OffshoreSCADAImage />}
               </div>
               <div class="case-study-industry">
                 <span>{study.industry}</span>

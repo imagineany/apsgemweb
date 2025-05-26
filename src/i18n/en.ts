@@ -1,6 +1,8 @@
+import { company } from '../config';
+
 export const enTranslations = {
   meta: {
-    title: "TechPrecision - Enterprise Software Development",
+    title: `${company.name} - Enterprise Software Development`,
     description: "Software development company providing AI solutions with precision and reliability."
   },
   nav: {
@@ -35,6 +37,14 @@ export const enTranslations = {
       {
         title: "Your Agentic Solutions",
         description: "Enterprise AI agents that access your knowledge base and automate complex tasks across your organization."
+      },
+      {
+        title: "Your Blockchain & Asset Tokenization",
+        description: "Decentralized solutions and smart contract development that tokenize your digital assets, enabling new revenue streams and secure peer-to-peer transactions."
+      },
+      {
+        title: "Your SCADA & Industrial Automation",
+        description: "Modern SCADA systems that bridge traditional industrial automation with cloud-native technologies, ensuring operational excellence and future-ready scalability."
       }
     ]
   },
@@ -122,6 +132,12 @@ export const enTranslations = {
         title: "Agentic AI Solution for Decentralized Task Marketplace",
         industry: "Artificial Intelligence / Blockchain",
         description: "Implemented an MCP protocol integration enabling LLMs to operate autonomously on a decentralized task marketplace, reducing task completion time by 70% and increasing transaction volume.",
+        readMore: "Read Case Study"
+      },
+      {
+        title: "Hybrid Offshore SCADA: Siemens WinCC to Cloud-Native Transformation",
+        industry: "Energy / Offshore",
+        description: "Modernized legacy Siemens WinCC SCADA infrastructure with cloud-native microservices, reducing maintenance costs by 40% and achieving 99.9% uptime for offshore wind farm operations.",
         readMore: "Read Case Study"
       }
     ]

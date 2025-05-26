@@ -7,6 +7,7 @@ import RetailChainImage from '~/media/retail-chain-erp-solution.png?w=800&h=400&
 import EquipmentVendorImage from '~/media/5g-equipment-vendor-swap.png?w=800&h=400&format=webp&jsx';
 import FibreRolloutImage from '~/media/ai-gis-fibre-rollout.png?w=800&h=400&format=webp&jsx';
 import McpAgenticImage from '~/media/mcp-agentic-ai-marketplace.png?w=800&h=400&format=webp&jsx';
+import OffshoreSCADAImage from '~/media/offshore-scada-system.png?w=800&h=400&format=webp&jsx';
 
 // Image component mapping
 const imageComponents: Record<string, any> = {
@@ -15,7 +16,8 @@ const imageComponents: Record<string, any> = {
   "/media/retail-chain-erp-solution.png": RetailChainImage,
   "/media/5g-equipment-vendor-swap.png": EquipmentVendorImage,
   "/media/ai-gis-fibre-rollout.png": FibreRolloutImage,
-  "/media/mcp-agentic-ai-marketplace.png": McpAgenticImage
+  "/media/mcp-agentic-ai-marketplace.png": McpAgenticImage,
+  "/media/offshore-scada-system.png": OffshoreSCADAImage
 };
 
 interface OptimizedImageProps {

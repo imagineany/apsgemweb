@@ -43,5 +43,12 @@ export const caseStudyInfo = [
     description: "Implementierung einer MCP-Protokollintegration, die es LLMs ermöglicht, autonom auf einem dezentralen Aufgabenmarktplatz zu operieren, wodurch die Aufgabenerledigungszeit um 70% reduziert und das Transaktionsvolumen erhöht wurde.",
     readMore: "Fallstudie lesen",
     mdxPath: ""
+  },
+  {
+    title: "Hybrid-Offshore-SCADA: Siemens WinCC zu Cloud-Native Transformation",
+    industry: "Energie / Offshore",
+    description: "Modernisierung der Legacy-Siemens-WinCC-SCADA-Infrastruktur mit Cloud-nativen Microservices, Reduzierung der Wartungskosten um 40% und Erreichen von 99,9% Verfügbarkeit für Offshore-Windpark-Operationen.",
+    readMore: "Fallstudie lesen",
+    mdxPath: ""
   }
 ];

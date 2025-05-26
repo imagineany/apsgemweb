@@ -1,6 +1,8 @@
+import { company } from '../config';
+
 export const deTranslations = {
   meta: {
-    title: "TechPrecision - Enterprise-Softwareentwicklung",
+    title: `${company.name} - Enterprise-Softwareentwicklung`,
     description: "Softwareentwicklungsfirma, die KI-Lösungen mit Präzision und Zuverlässigkeit anbietet."
   },
   nav: {
@@ -35,6 +37,14 @@ export const deTranslations = {
       {
         title: "Ihre agentischen Lösungen",
         description: "Unternehmens-KI-Agenten, die auf Ihre Wissensbasis zugreifen und komplexe Aufgaben in Ihrer gesamten Organisation automatisieren."
+      },
+      {
+        title: "Ihre Blockchain- & Asset-Tokenisierung",
+        description: "Dezentrale Lösungen und Smart-Contract-Entwicklung, die Ihre digitalen Assets tokenisieren und neue Einnahmequellen sowie sichere Peer-to-Peer-Transaktionen ermöglichen."
+      },
+      {
+        title: "Ihre SCADA- & Industrieautomatisierung",
+        description: "Moderne SCADA-Systeme, die traditionelle Industrieautomatisierung mit Cloud-nativen Technologien verbinden und operative Exzellenz sowie zukunftssichere Skalierbarkeit gewährleisten."
       }
     ]
   },
@@ -122,6 +132,12 @@ export const deTranslations = {
         title: "Agentische KI-Lösung für dezentralen Aufgabenmarktplatz",
         industry: "Künstliche Intelligenz / Blockchain",
         description: "Implementierung einer MCP-Protokollintegration, die es LLMs ermöglicht, autonom auf einem dezentralen Aufgabenmarktplatz zu operieren, wodurch die Aufgabenerledigungszeit um 70% reduziert und das Transaktionsvolumen erhöht wurde.",
+        readMore: "Fallstudie lesen"
+      },
+      {
+        title: "Hybrid-Offshore-SCADA: Siemens WinCC zu Cloud-Native Transformation",
+        industry: "Energie / Offshore",
+        description: "Modernisierung der Legacy-Siemens-WinCC-SCADA-Infrastruktur mit Cloud-nativen Microservices, Reduzierung der Wartungskosten um 40% und Erreichen von 99,9% Verfügbarkeit für Offshore-Windpark-Operationen.",
         readMore: "Fallstudie lesen"
       }
     ]

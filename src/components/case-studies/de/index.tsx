@@ -4,6 +4,7 @@ import { caseStudyInfo as retailInfo, RetailChainERP } from './RetailChainERP';
 import { caseStudyInfo as telecomInfo, TelecomVendorSwap } from './TelecomVendorSwap';
 import { caseStudyInfo as fibreInfo, AIGISFibreRollout } from './AIGISFibreRollout';
 import { caseStudyInfo as agenticInfo, AgenticAIMarketplace } from './AgenticAIMarketplace';
+import { caseStudyInfo as offshoreSCADAInfo, OffshoreSCADA } from './OffshoreSCADA';
 
 // Export all case study components
 export {
@@ -12,7 +13,8 @@ export {
   RetailChainERP,
   TelecomVendorSwap,
   AIGISFibreRollout,
-  AgenticAIMarketplace
+  AgenticAIMarketplace,
+  OffshoreSCADA
 };
 
 // Export all case study metadata
@@ -22,7 +24,8 @@ export const caseStudies = [
   retailInfo,
   telecomInfo,
   fibreInfo,
-  agenticInfo
+  agenticInfo,
+  offshoreSCADAInfo
 ];
 
 // Map of case study IDs to components
@@ -33,11 +36,13 @@ export const caseStudyComponents: Record<string, any> = {
   [telecomInfo.id]: TelecomVendorSwap,
   [fibreInfo.id]: AIGISFibreRollout,
   [agenticInfo.id]: AgenticAIMarketplace,
+  [offshoreSCADAInfo.id]: OffshoreSCADA,
   // Map numeric IDs for backward compatibility
   "0": ManufacturingTransformation,
   "1": FinancialServicesCloudMigration,
   "2": RetailChainERP,
   "3": TelecomVendorSwap,
   "4": AIGISFibreRollout,
-  "5": AgenticAIMarketplace
+  "5": AgenticAIMarketplace,
+  "6": OffshoreSCADA
 };

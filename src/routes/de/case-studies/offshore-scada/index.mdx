@@ -1,0 +1,69 @@
+---
+title: Hybrid-Offshore-SCADA: Siemens WinCC zu Cloud-Native Transformation
+industry: Energie / Offshore
+---
+
+import { component$ } from '@builder.io/qwik';
+import { Link } from '@builder.io/qwik-city';
+
+# Hybrid-Offshore-SCADA: Siemens WinCC zu Cloud-Native Transformation
+
+## Herausforderung
+
+Ein großer Offshore-Windpark-Betreiber musste seine alternde Siemens WinCC SCADA-Infrastruktur modernisieren und dabei die operative Kontinuität für kritische Energieproduktionssysteme in rauen Meeresumgebungen aufrechterhalten. Der Kunde stand vor komplexen technischen Herausforderungen, einschließlich Legacy-Systemen mit begrenzter Skalierbarkeit und hohen Wartungskosten, rauen Offshore-Bedingungen, die robuste Kommunikation erfordern, komplexer Integration von 200+ Windturbinensteuerungen über Modbus TCP/RTU, Bedarf an Echtzeit-Überwachung und vorausschauenden Wartungsfähigkeiten, regulatorischen Compliance-Anforderungen für kritische Energieinfrastruktur und begrenzter Konnektivitätsbandbreite zwischen Offshore-Plattform und Onshore-Betrieb.
+
+## Lösung
+
+Wir entwickelten eine hybride SCADA-Architektur, die traditionelle Siemens-Infrastruktur mit modernen Cloud-nativen Technologien verbindet:
+
+- **Hybride Integration**: Beibehaltung der bestehenden Siemens WinCC HMI bei gleichzeitiger Hinzufügung einer Cloud-nativen Datenverarbeitungsschicht
+- **Protokoll-Gateway**: Implementierung eines OPC UA-Gateways für nahtlose Integration zwischen Legacy-PLCs und modernen Systemen
+- **Edge Computing**: Bereitstellung von Kubernetes-orchestrierten Edge-Knoten für lokale Verarbeitung und Ausfallsicherheit
+- **Cloud-Architektur**: Erstellung einer Microservices-Architektur auf AWS für skalierbare Datenanalyse und -speicherung
+- **Sichere Kommunikation**: Integration von DNP3-sicherer Authentifizierung für kritische Steuerungsfunktionen
+- **Modernes IoT**: Aufbau von MQTT Sparkplug B-Datenorganisation für effiziente IoT-Kommunikation
+- **Vorausschauende Analytik**: Implementierung von Digital-Twin-Technologie für vorausschauende Wartungsalgorithmen
+- **Moderne Interfaces**: Entwicklung von Echtzeit-Dashboards mit React-basierten modernen Web-Interfaces
+- **Redundante Konnektivität**: Erstellung mehrerer Kommunikationswege: Satellit, Mobilfunk und Glasfaser-Backup
+
+## Technische Umsetzung
+
+**Traditionelle SCADA-Technologien:**
+- Siemens WinCC, TIA Portal, S7-1500 PLCs, Profinet
+
+**Kommunikationsprotokolle:**
+- Modbus TCP/RTU für Turbinensteuerungskommunikation
+- DNP3 für Utility-Grade-Datenübertragung mit sicherer Authentifizierung
+- OPC UA für moderne industrielle IoT-Konnektivität
+- MQTT Sparkplug B für leichtgewichtige, organisierte IoT-Sensordaten
+
+**Cloud-Native Infrastruktur:**
+- AWS IoT Core für Cloud-SCADA-Infrastruktur
+- Kubernetes-Orchestrierung für containerisierte SCADA-Anwendungen
+- Docker-Container für Microservices-Architektur
+- Zeitreihendatenbanken für Edge-to-Cloud-Datenpipelines
+
+**Sicherheit & Compliance:**
+- IEC 62443 industrielle Sicherheitsstandards-Compliance
+- Zero-Trust-Architektur-Implementierung
+- VPN-Tunneling für sichere Kommunikation
+- Multi-Faktor-Authentifizierung und erweiterte Zugriffskontrolle
+
+## Ergebnisse
+
+Die hybride SCADA-Transformation lieferte außergewöhnliche operative Verbesserungen:
+
+- **40% Reduzierung der Wartungskosten** durch vorausschauende Analytik und automatisierte Überwachung
+- **99,9% Systemverfügbarkeit** trotz rauer Offshore-Meeresbedingungen
+- **50% schnellere Datenerfassung** durch optimierte Modbus-Polling-Strategien und Edge-Verarbeitung
+- **Echtzeit-Alarmreaktion** reduziert von 15 Minuten auf 30 Sekunden
+- **Nahtlose Integration** von 200+ Turbinensteuerungen im gesamten Windpark
+- **Verbesserte Cybersicherheitslage** mit moderner Authentifizierung und Verschlüsselungsprotokollen
+- **Skalierbare Architektur** bereit für zukünftige Windpark-Erweiterungen und Technologie-Upgrades
+- **Reduziertes operatives Risiko** durch redundante Kommunikationssysteme und Failover-Fähigkeiten
+
+Der Offshore-Windpark arbeitet nun mit einem zukunftsfähigen SCADA-System, das die Zuverlässigkeit bewährter Siemens-Technologie mit der Skalierbarkeit und Intelligenz Cloud-nativer Lösungen kombiniert und neue Standards für Offshore-Erneuerbare-Energie-Operationen setzt sowie erfolgreiche digitale Transformation in kritischer Infrastruktur demonstriert.
+
+<div class="back-link">
+  <Link href="/de/case-studies/">Zurück zu den Fallstudien</Link>
+</div>
