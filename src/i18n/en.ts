@@ -139,6 +139,12 @@ export const enTranslations = {
         industry: "Energy / Offshore",
         description: "Modernized legacy Siemens WinCC SCADA infrastructure with cloud-native microservices, reducing maintenance costs by 40% and achieving 99.9% uptime for offshore wind farm operations.",
         readMore: "Read Case Study"
+      },
+      {
+        title: "Decentralized Talent Marketplace: Revolutionizing Tech & Creative Work with Blockchain",
+        industry: "Blockchain / Web3",
+        description: "Built a permissionless, community-governed marketplace for tech talents and art creators using EIP-2535 Diamond architecture, ERC-1155 NFT skill verification, and omnichain integration, reducing platform fees by 75% and increasing project completion rates by 60%.",
+        readMore: "Read Case Study"
       }
     ]
   },

@@ -5,6 +5,7 @@ import { caseStudyInfo as telecomInfo, TelecomVendorSwap } from './TelecomVendor
 import { caseStudyInfo as fibreInfo, AIGISFibreRollout } from './AIGISFibreRollout';
 import { caseStudyInfo as agenticInfo, AgenticAIMarketplace } from './AgenticAIMarketplace';
 import { caseStudyInfo as offshoreSCADAInfo, OffshoreSCADA } from './OffshoreSCADA';
+import { caseStudyInfo as decentralizedTalentInfo, DecentralizedTalentMarketplace } from './DecentralizedTalentMarketplace';
 
 // Export all case study components
 export {
@@ -14,7 +15,8 @@ export {
   TelecomVendorSwap,
   AIGISFibreRollout,
   AgenticAIMarketplace,
-  OffshoreSCADA
+  OffshoreSCADA,
+  DecentralizedTalentMarketplace
 };
 
 // Export all case study metadata
@@ -25,7 +27,8 @@ export const caseStudies = [
   telecomInfo,
   fibreInfo,
   agenticInfo,
-  offshoreSCADAInfo
+  offshoreSCADAInfo,
+  decentralizedTalentInfo
 ];
 
 // Map of case study IDs to components
@@ -37,6 +40,7 @@ export const caseStudyComponents: Record<string, any> = {
   [fibreInfo.id]: AIGISFibreRollout,
   [agenticInfo.id]: AgenticAIMarketplace,
   [offshoreSCADAInfo.id]: OffshoreSCADA,
+  [decentralizedTalentInfo.id]: DecentralizedTalentMarketplace,
   // Map numeric IDs for backward compatibility
   "0": ManufacturingTransformation,
   "1": FinancialServicesCloudMigration,
@@ -44,5 +48,6 @@ export const caseStudyComponents: Record<string, any> = {
   "3": TelecomVendorSwap,
   "4": AIGISFibreRollout,
   "5": AgenticAIMarketplace,
-  "6": OffshoreSCADA
+  "6": OffshoreSCADA,
+  "7": DecentralizedTalentMarketplace
 };

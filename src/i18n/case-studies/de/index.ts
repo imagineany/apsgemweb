@@ -50,5 +50,12 @@ export const caseStudyInfo = [
     description: "Modernisierung der Legacy-Siemens-WinCC-SCADA-Infrastruktur mit Cloud-nativen Microservices, Reduzierung der Wartungskosten um 40% und Erreichen von 99,9% Verfügbarkeit für Offshore-Windpark-Operationen.",
     readMore: "Fallstudie lesen",
     mdxPath: ""
+  },
+  {
+    title: "Dezentraler Talentmarktplatz: Revolution der Tech- & Kreativarbeit mit Blockchain",
+    industry: "Blockchain / Web3",
+    description: "Aufbau eines erlaubnisfreien, gemeinschaftsgesteuerten Marktplatzes für Tech-Talente und Kunstschaffende mit EIP-2535 Diamond-Architektur, ERC-1155 NFT-Skill-Verifizierung und Omnichain-Integration, wodurch Plattformgebühren um 75% reduziert und Projektabschlussraten um 60% erhöht wurden.",
+    readMore: "Fallstudie lesen",
+    mdxPath: ""
   }
 ];
