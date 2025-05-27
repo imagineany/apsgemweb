@@ -30,7 +30,7 @@ export const ServicesSection = component$(() => {
         <h2 class="section-title">{t('services.title')}</h2>
         <p class="section-subtitle">{t('services.subtitle')}</p>
         
-        <div class="grid grid-6">
+        <div class="grid grid-3">
           {services.map((service, index) => (
             <div key={index} class="card service-card">
               <div class="service-icon">
