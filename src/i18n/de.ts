@@ -151,6 +151,7 @@ export const deTranslations = {
   technologies: {
     title: "Technologien, die wir beherrschen",
     subtitle: "Modernste Tools und Frameworks für Ihre Lösungen",
+    viewAll: "Alle Technologien anzeigen",
     categories: {
       cloudPlatforms: "Cloud-Plattformen",
       programmingLanguages: "Programmiersprachen",
@@ -165,6 +166,7 @@ export const deTranslations = {
   partners: {
     title: "Vertraut von Branchenführern",
     subtitle: "Wir haben mit Unternehmen aus verschiedenen Branchen zusammengearbeitet, um transformative Lösungen zu liefern",
+    viewAll: "Alle Partner anzeigen",
     categories: {
       manufacturing: "Fertigung",
       manufacturingDesc: "Digitale Transformation und Automatisierungslösungen für industrielle Abläufe",

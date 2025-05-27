@@ -50,7 +50,7 @@ export const PartnersSection = component$(() => {
               class="btn-secondary partners-view-all"
               onClick$={() => isDialogOpen.value = true}
             >
-              View All Partners
+              {t('partners.viewAll')}
             </button>
           </div>
         </div>

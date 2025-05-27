@@ -79,7 +79,7 @@ export const TechnologiesSection = component$(() => {
               class="btn-secondary technologies-view-all"
               onClick$={() => isDialogOpen.value = true}
             >
-              View All Technologies
+              {t('technologies.viewAll')}
             </button>
           </div>
         </div>

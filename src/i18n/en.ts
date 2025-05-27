@@ -151,6 +151,7 @@ export const enTranslations = {
   technologies: {
     title: "Technologies We Master",
     subtitle: "Cutting-edge tools and frameworks powering your solutions",
+    viewAll: "View All Technologies",
     categories: {
       cloudPlatforms: "Cloud Platforms",
       programmingLanguages: "Programming Languages",
@@ -165,6 +166,7 @@ export const enTranslations = {
   partners: {
     title: "Trusted by Industry Leaders",
     subtitle: "We've partnered with companies across diverse industries to deliver transformative solutions",
+    viewAll: "View All Partners",
     categories: {
       manufacturing: "Manufacturing",
       manufacturingDesc: "Digital transformation and automation solutions for industrial operations",
