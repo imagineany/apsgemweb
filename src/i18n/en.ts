@@ -148,6 +148,39 @@ export const enTranslations = {
       }
     ]
   },
+  technologies: {
+    title: "Technologies We Master",
+    subtitle: "Cutting-edge tools and frameworks powering your solutions",
+    categories: {
+      cloudPlatforms: "Cloud Platforms",
+      programmingLanguages: "Programming Languages",
+      frontendFrameworks: "Frontend Frameworks",
+      backendInfrastructure: "Backend & Infrastructure",
+      databases: "Databases",
+      industrialIoT: "Industrial & IoT",
+      blockchainWeb3: "Blockchain & Web3",
+      devopsMonitoring: "DevOps & Monitoring"
+    }
+  },
+  partners: {
+    title: "Trusted by Industry Leaders",
+    subtitle: "We've partnered with companies across diverse industries to deliver transformative solutions",
+    categories: {
+      manufacturing: "Manufacturing",
+      manufacturingDesc: "Digital transformation and automation solutions for industrial operations",
+      finance: "Financial Services",
+      financeDesc: "Secure cloud migration and digital banking platforms",
+      telecom: "Telecommunications",
+      telecomDesc: "5G infrastructure and network optimization solutions",
+      energy: "Energy & Utilities",
+      energyDesc: "Smart grid solutions and renewable energy management systems",
+      retail: "Retail & E-commerce",
+      retailDesc: "Custom ERP systems and supply chain optimization",
+      blockchain: "Blockchain & Web3",
+      blockchainDesc: "Decentralized applications and smart contract development"
+    },
+    confidentialityNote: "Company names are generalized to maintain client confidentiality while showcasing our industry expertise."
+  },
   team: {
     title: "Our Team",
     subtitle: "Expert professionals dedicated to your success",

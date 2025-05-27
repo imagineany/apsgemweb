@@ -148,10 +148,43 @@ export const deTranslations = {
       }
     ]
   },
+  technologies: {
+    title: "Technologien, die wir beherrschen",
+    subtitle: "Modernste Tools und Frameworks für Ihre Lösungen",
+    categories: {
+      cloudPlatforms: "Cloud-Plattformen",
+      programmingLanguages: "Programmiersprachen",
+      frontendFrameworks: "Frontend-Frameworks",
+      backendInfrastructure: "Backend & Infrastruktur",
+      databases: "Datenbanken",
+      industrialIoT: "Industrie & IoT",
+      blockchainWeb3: "Blockchain & Web3",
+      devopsMonitoring: "DevOps & Monitoring"
+    }
+  },
+  partners: {
+    title: "Vertraut von Branchenführern",
+    subtitle: "Wir haben mit Unternehmen aus verschiedenen Branchen zusammengearbeitet, um transformative Lösungen zu liefern",
+    categories: {
+      manufacturing: "Fertigung",
+      manufacturingDesc: "Digitale Transformation und Automatisierungslösungen für industrielle Abläufe",
+      finance: "Finanzdienstleistungen",
+      financeDesc: "Sichere Cloud-Migration und digitale Banking-Plattformen",
+      telecom: "Telekommunikation",
+      telecomDesc: "5G-Infrastruktur und Netzwerkoptimierungslösungen",
+      energy: "Energie & Versorgung",
+      energyDesc: "Smart-Grid-Lösungen und Management-Systeme für erneuerbare Energien",
+      retail: "Einzelhandel & E-Commerce",
+      retailDesc: "Maßgeschneiderte ERP-Systeme und Supply-Chain-Optimierung",
+      blockchain: "Blockchain & Web3",
+      blockchainDesc: "Dezentrale Anwendungen und Smart-Contract-Entwicklung"
+    },
+    confidentialityNote: "Firmennamen sind verallgemeinert, um die Vertraulichkeit der Kunden zu wahren und gleichzeitig unsere Branchenexpertise zu zeigen."
+  },
   team: {
     title: "Unser Team",
-    subtitle: "Experten, die sich Ihrem Erfolg widmen",
-    description: "Unser Team kombiniert tiefes technisches Fachwissen mit Branchenkenntnissen, um Lösungen zu liefern, die echten Geschäftswert schaffen. Mit jahrzehntelanger kollektiver Erfahrung in der Unternehmens-Softwareentwicklung bringen wir Ingenieurskunst in jedes Projekt ein."
+    subtitle: "Experten, die sich Ihrem Erfolg verschrieben haben",
+    description: "Unser Team vereint tiefgreifende technische Expertise mit Branchenwissen, um Lösungen zu liefern, die echten Geschäftswert schaffen. Mit jahrzehntelanger kollektiver Erfahrung in der Unternehmenssoftwareentwicklung bringen wir technische Exzellenz in jedes Projekt."
   },
   contact: {
     title: "Bereit, Ihre geschäftliche Herausforderung anzugehen?",

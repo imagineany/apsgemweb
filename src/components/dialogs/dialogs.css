@@ -140,6 +140,281 @@
   margin-top: 1rem;
 }
 
+/* Technology Dialog Styles */
+.technology-dialog-content {
+  max-width: 1200px;
+  width: 95%;
+}
+
+.technology-dialog-subtitle {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--text-color-light);
+  font-size: 1.1rem;
+}
+
+.technology-categories-detailed {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+}
+
+.technology-category-detailed {
+  background-color: var(--bg-color-light);
+  border-radius: 12px;
+  padding: 2rem;
+  border: 1px solid var(--border-color);
+}
+
+.category-title-detailed {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: var(--primary-color);
+  text-align: center;
+  border-bottom: 2px solid var(--primary-color-light);
+  padding-bottom: 0.5rem;
+}
+
+.technology-grid-detailed {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.technology-item-detailed {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: var(--card-bg-color);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.technology-item-detailed:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-color: var(--primary-color-light);
+}
+
+.technology-icon-container {
+  flex-shrink: 0;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-color-light);
+  border-radius: 8px;
+}
+
+.technology-icon-detailed {
+  width: 2rem;
+  height: 2rem;
+  transition: transform 0.3s ease;
+}
+
+.technology-item-detailed:hover .technology-icon-detailed {
+  transform: scale(1.1);
+}
+
+.technology-info {
+  flex: 1;
+}
+
+.technology-name-detailed {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  color: var(--text-color);
+}
+
+.technology-description {
+  font-size: 0.875rem;
+  color: var(--text-color-light);
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Partners Dialog Styles */
+.partners-dialog-content {
+  max-width: 1200px;
+  width: 95%;
+}
+
+.partners-dialog-subtitle {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--text-color-light);
+  font-size: 1.1rem;
+}
+
+.partners-categories-detailed {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+}
+
+.partner-category-detailed {
+  background-color: var(--bg-color-light);
+  border-radius: 12px;
+  padding: 2rem;
+  border: 1px solid var(--border-color);
+}
+
+.partner-category-title-detailed {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+  text-align: center;
+  border-bottom: 2px solid var(--primary-color-light);
+  padding-bottom: 0.5rem;
+}
+
+.partner-category-description-detailed {
+  font-size: 0.95rem;
+  color: var(--text-color-light);
+  margin-bottom: 2rem;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.partner-section {
+  margin-bottom: 2rem;
+}
+
+.partner-section:last-child {
+  margin-bottom: 0;
+}
+
+.partner-subsection-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--text-color);
+  border-left: 3px solid var(--primary-color-light);
+  padding-left: 0.75rem;
+}
+
+.partner-companies-detailed {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.partner-company-detailed {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem;
+  background-color: var(--card-bg-color);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.partner-company-detailed:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-color: var(--primary-color-light);
+}
+
+.partner-company-placeholder-detailed {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 6px;
+  background: linear-gradient(135deg, var(--primary-color-light), var(--primary-color));
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 0.75rem;
+  flex-shrink: 0;
+}
+
+.partner-company-name-detailed {
+  font-weight: 500;
+  color: var(--text-color);
+  font-size: 0.9rem;
+}
+
+.partner-projects-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.partner-project-item {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-color-light);
+  font-size: 0.875rem;
+  line-height: 1.4;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.partner-project-item:last-child {
+  border-bottom: none;
+}
+
+.partner-project-item::before {
+  content: "•";
+  color: var(--primary-color);
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+.partners-note-detailed {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background-color: var(--card-bg-color);
+  border-radius: 8px;
+  border-left: 4px solid var(--primary-color);
+  text-align: center;
+}
+
+.partners-note-detailed p {
+  margin: 0;
+  font-style: italic;
+  color: var(--text-color-light);
+  font-size: 0.9rem;
+}
+
+@media (min-width: 768px) {
+  .technology-categories-detailed {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .technology-grid-detailed {
+    grid-template-columns: 1fr;
+  }
+  
+  .partners-categories-detailed {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .partner-companies-detailed {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .technology-categories-detailed {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .partners-categories-detailed {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 /* Case study content styling moved to src/components/case-studies/case-studies.css */
 
 /* Responsive adjustments */
@@ -162,6 +437,36 @@
     max-width: 400px;
     margin: 0 auto 1.5rem;
     display: block;
+  }
+  
+  .technology-category-detailed {
+    padding: 1.5rem;
+  }
+  
+  .technology-item-detailed {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.75rem;
+  }
+  
+  .technology-icon-container {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  
+  .technology-icon-detailed {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  
+  .partner-category-detailed {
+    padding: 1.5rem;
+  }
+  
+  .partner-company-detailed {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
   }
 }
 
@@ -187,5 +492,21 @@
   .case-study-industry span {
     font-size: 0.85rem;
     padding: 0.25rem 0.75rem;
+  }
+  
+  .technology-categories-detailed {
+    gap: 1.5rem;
+  }
+  
+  .technology-category-detailed {
+    padding: 1rem;
+  }
+  
+  .partners-categories-detailed {
+    gap: 1.5rem;
+  }
+  
+  .partner-category-detailed {
+    padding: 1rem;
   }
 }
