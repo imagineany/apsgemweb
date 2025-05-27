@@ -145,7 +145,7 @@ export const PartnersDialog = component$<PartnersDialogProps>((props) => {
                 <p class="partner-category-description-detailed">{category.description}</p>
                 
                 <div class="partner-section">
-                  <h4 class="partner-subsection-title">Partner Organizations</h4>
+                  <h4 class="partner-subsection-title">{t('partners.partnerOrganizations')}</h4>
                   <div class="partner-companies-detailed">
                     {category.companies.map((company, companyIndex) => (
                       <div key={companyIndex} class="partner-company-detailed">
@@ -159,7 +159,7 @@ export const PartnersDialog = component$<PartnersDialogProps>((props) => {
                 </div>
                 
                 <div class="partner-section">
-                  <h4 class="partner-subsection-title">Project Examples</h4>
+                  <h4 class="partner-subsection-title">{t('partners.projectExamples')}</h4>
                   <ul class="partner-projects-list">
                     {category.projects.map((project, projectIndex) => (
                       <li key={projectIndex} class="partner-project-item">{project}</li>

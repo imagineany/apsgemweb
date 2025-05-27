@@ -167,6 +167,8 @@ export const deTranslations = {
     title: "Vertraut von Branchenführern",
     subtitle: "Wir haben mit Unternehmen aus verschiedenen Branchen zusammengearbeitet, um transformative Lösungen zu liefern",
     viewAll: "Alle Partner anzeigen",
+    partnerOrganizations: "Partnerorganisationen",
+    projectExamples: "Projektbeispiele",
     categories: {
       manufacturing: "Fertigung",
       manufacturingDesc: "Digitale Transformation und Automatisierungslösungen für industrielle Abläufe",

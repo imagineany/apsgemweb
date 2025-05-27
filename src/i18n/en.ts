@@ -167,6 +167,8 @@ export const enTranslations = {
     title: "Trusted by Industry Leaders",
     subtitle: "We've partnered with companies across diverse industries to deliver transformative solutions",
     viewAll: "View All Partners",
+    partnerOrganizations: "Partner Organizations",
+    projectExamples: "Project Examples",
     categories: {
       manufacturing: "Manufacturing",
       manufacturingDesc: "Digital transformation and automation solutions for industrial operations",
